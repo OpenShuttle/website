@@ -469,14 +469,6 @@ code {
   vertical-align: top;
 }
 
-.todo {
-  padding: 1px 6px;
-  border-radius: 4px;
-  background: #fff1bf;
-  color: var(--color-text);
-  font-weight: 700;
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;

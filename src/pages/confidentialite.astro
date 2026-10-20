@@ -1,6 +1,6 @@
 ---
 import Prose from '../layouts/Prose.astro';
-import { github, routes } from '../i18n/routes';
+import { contact, github, routes } from '../i18n/routes';
 ---
 
 <Prose
@@ -52,7 +52,7 @@ import { github, routes } from '../i18n/routes';
   <h2>Vos droits</h2>
   <p>
     Le site ne conservant aucune donnée personnelle vous concernant, il n’y a rien à consulter ni à supprimer de notre côté. Pour toute
-    question, écrivez-nous via <a href={github.issues}>GitHub</a> ou à l’adresse indiquée dans les
-    <a href={routes.legal.fr}>mentions légales</a>. Vous pouvez aussi saisir la <a href="https://www.cnil.fr/">CNIL</a>.
+    question, écrivez à <a href={`mailto:${contact.email}`}>{contact.email}</a> ou ouvrez un ticket sur
+    <a href={github.issues}>GitHub</a>. Voir aussi les <a href={routes.legal.fr}>mentions légales</a>. Vous pouvez aussi saisir la <a href="https://www.cnil.fr/">CNIL</a>.
   </p>
 </Prose>

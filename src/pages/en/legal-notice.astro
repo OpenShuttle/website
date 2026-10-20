@@ -1,28 +1,26 @@
 ---
 import Prose from '../../layouts/Prose.astro';
-import { github, routes } from '../../i18n/routes';
+import { contact, github, routes } from '../../i18n/routes';
 ---
 
 <Prose
   locale="en"
   page="legal"
   title="Legal notice of the OpenShuttle website"
-  description="Legal notice of openshuttle.app: publisher, hosting, intellectual property and licences."
+  description="Legal notice of openshuttle.app: publisher, contact, hosting, intellectual property and licences."
   heading="Legal notice"
   updated="2026-10-20"
 >
   <h2>Publisher</h2>
   <p>
-    The openshuttle.app website is published by <span class="todo">[TO BE COMPLETED: name of the person or association]</span>,
-    <span class="todo">[TO BE COMPLETED: address]</span>.<br />
-    Contact: <span class="todo">[TO BE COMPLETED: email address]</span>.<br />
-    Publication director: <span class="todo">[TO BE COMPLETED]</span>.
+    This website is published by a private individual, on a non-professional basis, as part of the OpenShuttle open source project.
   </p>
+  <p>Contact: <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
 
   <h2>Hosting</h2>
   <p>
-    Cloudflare, Inc. (Cloudflare Pages), 101 Townsend Street, San Francisco, CA 94107, United States,
-    <a href="https://www.cloudflare.com/">cloudflare.com</a>. <span class="todo">[TO BE COMPLETED: check the host’s address and phone]</span>
+    Cloudflare, Inc. (Cloudflare Pages), 101 Townsend Street, San Francisco, CA 94107, United States.<br />
+    Phone: +1 (650) 319-8930 · <a href="https://www.cloudflare.com/">cloudflare.com</a>
   </p>
   <p>
     App files are published on GitHub (GitHub, Inc.), in the <a href={github.repo}>OpenShuttle/openshuttle-app</a> repository.

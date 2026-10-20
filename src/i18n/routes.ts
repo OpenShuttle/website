@@ -31,6 +31,11 @@ export const github = {
   website: 'https://github.com/OpenShuttle/website',
 } as const;
 
+export const contact = {
+  /** Forwarded by Cloudflare Email Routing; never publish a personal address. */
+  email: 'contact@openshuttle.app',
+} as const;
+
 /** hreflang alternates of a page path (fr, en, x-default), or undefined for an unknown path. */
 export function alternatesFor(path: string) {
   const entry = Object.values(routes).find((r) => r.fr === path || r.en === path);

@@ -1,5 +1,5 @@
 ---
-import { github, routes, type Locale } from '../i18n/routes';
+import { contact, github, routes, type Locale } from '../i18n/routes';
 import { ui } from '../i18n/ui';
 
 interface Props {
@@ -41,6 +41,7 @@ const t = ui[locale];
         <ul>
           <li><a href={routes.privacy[locale]}>{t.privacy}</a></li>
           <li><a href={routes.legal[locale]}>{t.legalNotice}</a></li>
+          <li><a href={`mailto:${contact.email}`}>{t.contact}</a></li>
         </ul>
       </div>
     </div>

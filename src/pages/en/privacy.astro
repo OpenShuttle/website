@@ -1,6 +1,6 @@
 ---
 import Prose from '../../layouts/Prose.astro';
-import { github, routes } from '../../i18n/routes';
+import { contact, github, routes } from '../../i18n/routes';
 ---
 
 <Prose
@@ -49,7 +49,8 @@ import { github, routes } from '../../i18n/routes';
 
   <h2>Your rights</h2>
   <p>
-    The site keeps no personal data about you, so there is nothing to access or delete on our side. For any question, reach us on
-    <a href={github.issues}>GitHub</a> or at the address given in the <a href={routes.legal.en}>legal notice</a>.
+    The site keeps no personal data about you, so there is nothing to access or delete on our side. For any question, write to
+    <a href={`mailto:${contact.email}`}>{contact.email}</a> or open an issue on <a href={github.issues}>GitHub</a>. See also the
+    <a href={routes.legal.en}>legal notice</a>.
   </p>
 </Prose>

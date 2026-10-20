@@ -88,8 +88,8 @@ Regenerate them when the headline or the screenshot changes.
 
 ## To complete
 
-- `src/pages/mentions-legales.astro` and `src/pages/en/legal-notice.astro`:
-  publisher identity and contact (`[À COMPLÉTER]` / `[TO BE COMPLETED]`).
+- Contact address `contact@openshuttle.app` (`contact` in `src/i18n/routes.ts`):
+  set up its forwarding in Cloudflare Email Routing.
 - Code signing policy: update once SignPath Foundation signing is active.
 
 ## Licence

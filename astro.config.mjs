@@ -8,6 +8,8 @@ export const site = 'https://openshuttle.app';
 export default defineConfig({
   site,
   trailingSlash: 'always',
+  // Keep line breaks between text and links in the page sources as spaces.
+  compressHTML: false,
   build: { format: 'directory' },
   integrations: [
     sitemap({

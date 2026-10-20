@@ -1,28 +1,26 @@
 ---
 import Prose from '../layouts/Prose.astro';
-import { github, routes } from '../i18n/routes';
+import { contact, github, routes } from '../i18n/routes';
 ---
 
 <Prose
   locale="fr"
   page="legal"
   title="Mentions légales du site OpenShuttle"
-  description="Mentions légales du site openshuttle.app : éditeur, hébergement, propriété intellectuelle et licences."
+  description="Mentions légales du site openshuttle.app : éditeur, contact, hébergement, propriété intellectuelle et licences."
   heading="Mentions légales"
   updated="2026-10-20"
 >
   <h2>Éditeur du site</h2>
   <p>
-    Le site openshuttle.app est édité par <span class="todo">[À COMPLÉTER : nom de la personne ou de l’association]</span>,
-    <span class="todo">[À COMPLÉTER : adresse]</span>.<br />
-    Contact : <span class="todo">[À COMPLÉTER : adresse e-mail]</span>.<br />
-    Directeur ou directrice de la publication : <span class="todo">[À COMPLÉTER]</span>.
+    Ce site est édité par un particulier, à titre non professionnel, dans le cadre du projet libre OpenShuttle.
   </p>
+  <p>Contact : <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
 
   <h2>Hébergement</h2>
   <p>
-    Cloudflare, Inc. (service Cloudflare Pages), 101 Townsend Street, San Francisco, CA 94107, États-Unis,
-    <a href="https://www.cloudflare.com/">cloudflare.com</a>. <span class="todo">[À COMPLÉTER : vérifier l’adresse et le téléphone de l’hébergeur]</span>
+    Cloudflare, Inc. (service Cloudflare Pages), 101 Townsend Street, San Francisco, CA 94107, États-Unis.<br />
+    Téléphone : +1 (650) 319-8930 · <a href="https://www.cloudflare.com/">cloudflare.com</a>
   </p>
   <p>
     Les fichiers de l’application sont publiés sur GitHub (GitHub, Inc.), dans le dépôt <a href={github.repo}>OpenShuttle/openshuttle-app</a>.
