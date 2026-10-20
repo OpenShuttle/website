@@ -1,8 +1,9 @@
 ---
 import { home } from '../../data/home';
-import { Picture } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import Icon from '../Icon.astro';
+import Lightbox from '../Lightbox.astro';
+import ZoomableShot from '../ZoomableShot.astro';
 import FaqList from '../FaqList.astro';
 import { faq } from '../../data/faq';
 import { author, github, routes, type Locale } from '../../i18n/routes';
@@ -67,16 +68,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
         </span>
       </div>
       <div class="hero-media">
-        <Picture
-          src={shotDesk}
-          alt={copy.deskAlt}
-          class="shot"
-          formats={['avif', 'webp']}
-          widths={[480, 640, 800, 1280]}
-          sizes={heroSizes}
-          loading="eager"
-          fetchpriority="high"
-        />
+        <ZoomableShot locale={locale} src={shotDesk} alt={copy.deskAlt} widths={[480, 640, 800, 1280]} sizes={heroSizes} eager />
       </div>
     </div>
   </section>
@@ -124,7 +116,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
 
   <section class="container split" aria-labelledby="schedule-title">
     <div class="split-media">
-      <Picture src={shotSchedule} alt={copy.scheduleAlt} class="shot shot-soft" sizes={splitSizes} formats={['avif', 'webp']} widths={[480, 640, 800, 1280]} loading="lazy" />
+      <ZoomableShot locale={locale} src={shotSchedule} alt={copy.scheduleAlt} class="shot shot-soft" widths={[480, 640, 800, 1280]} sizes={splitSizes} />
     </div>
     <div class="split-text stack">
       <span class="eyebrow">{copy.scheduleEyebrow}</span>
@@ -151,7 +143,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
         <p class="body-lg on-dark-text">{copy.displayText}</p>
       </div>
       <div class="split-media">
-        <Picture src={shotDisplay} alt={copy.displayAlt} class="shot shot-dark" sizes={splitSizes} formats={['avif', 'webp']} widths={[480, 640, 800, 1440]} loading="lazy" />
+        <ZoomableShot locale={locale} src={shotDisplay} alt={copy.displayAlt} class="shot shot-dark" widths={[480, 640, 800, 1440]} sizes={splitSizes} />
       </div>
     </div>
   </section>
@@ -208,6 +200,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
       </div>
     </div>
   </section>
+  <Lightbox locale={locale} />
 </Base>
 
 <style>
@@ -318,15 +311,6 @@ const homeFaq = faq[locale].filter((item) => item.home);
     flex: 1 1 360px;
     min-width: 0;
     gap: 16px;
-  }
-
-  .shot-soft {
-    box-shadow: 0 18px 44px rgb(22 24 29 / 0.14);
-  }
-
-  .shot-dark {
-    border-color: #3a3f4b;
-    box-shadow: none;
   }
 
   .checks {

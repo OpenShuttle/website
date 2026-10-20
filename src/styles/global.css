@@ -360,6 +360,15 @@ code {
   box-shadow: var(--shadow-shot);
 }
 
+.shot-soft {
+  box-shadow: 0 18px 44px rgb(22 24 29 / 0.14);
+}
+
+.shot-dark {
+  border-color: #3a3f4b;
+  box-shadow: none;
+}
+
 /* FAQ */
 
 .faq-list {
