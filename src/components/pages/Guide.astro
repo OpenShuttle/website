@@ -1,0 +1,238 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../PageHeader.astro';
+import { routes, type Locale } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const copy = {
+  fr: {
+    title: 'Guide : un tournoi de badminton en 10 étapes avec OpenShuttle',
+    description:
+      'Organisez un tournoi de badminton de club pas à pas : catégories, inscriptions CSV, format en poules et tableaux, pointage, tirage, échéancier, table de marque, écran d’appel et résultats.',
+    eyebrow: 'Guide',
+    h1: 'Un tournoi en 10 étapes',
+    lead: 'De la création du tournoi au classement final, voici comment OpenShuttle accompagne votre journée. Les étapes 1 à 3 se préparent à l’avance ; les suivantes se déroulent le jour J.',
+    tocLabel: 'Sommaire',
+    stepPrefix: 'ÉTAPE',
+    anchor: 'etape',
+    before: 'Avant le tournoi',
+    dayOf: 'Le jour J',
+    backToTop: 'Retour au sommaire',
+    ctaTitle: 'Prêt à essayer ?',
+    ctaText: 'OpenShuttle est gratuit et fonctionne sans internet, sur Windows, macOS et Linux.',
+    ctaButton: 'Télécharger OpenShuttle',
+    faqLink: 'Questions fréquentes',
+  },
+  en: {
+    title: 'Guide: a badminton tournament in 10 steps with OpenShuttle',
+    description:
+      'Run a badminton club tournament step by step: categories, CSV entries, pools and brackets, check-in, draw, schedule, control desk, display screen and results.',
+    eyebrow: 'Guide',
+    h1: 'A tournament in 10 steps',
+    lead: 'From creating the tournament to the final standings, here is how OpenShuttle helps you through the day. Steps 1 to 3 are prepared beforehand; the others happen on the day.',
+    tocLabel: 'Contents',
+    stepPrefix: 'STEP',
+    anchor: 'step',
+    before: 'Before the tournament',
+    dayOf: 'On the day',
+    backToTop: 'Back to contents',
+    ctaTitle: 'Ready to try it?',
+    ctaText: 'OpenShuttle is free and works without internet, on Windows, macOS and Linux.',
+    ctaButton: 'Download OpenShuttle',
+    faqLink: 'Frequently asked questions',
+  },
+}[locale];
+
+const entries = (await getCollection('guide', (entry) => entry.id.startsWith(`${locale}/`))).sort(
+  (a, b) => a.data.step - b.data.step,
+);
+const steps = await Promise.all(
+  entries.map(async (entry) => ({ ...entry.data, Content: (await render(entry)).Content })),
+);
+const pad = (n: number) => String(n).padStart(2, '0');
+const groups = [
+  { label: copy.before, steps: steps.filter((s) => s.step <= 3) },
+  { label: copy.dayOf, steps: steps.filter((s) => s.step > 3) },
+];
+---
+
+<Base locale={locale} page="guide" title={copy.title} description={copy.description}>
+  <PageHeader eyebrow={copy.eyebrow} title={copy.h1} lead={copy.lead} />
+
+  <div class="container-narrow guide">
+    <nav class="toc" id="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title" class="toc-title">{copy.tocLabel}</h2>
+      {
+        groups.map((group) => (
+          <div class="toc-group">
+            <span class="toc-group-label">{group.label}</span>
+            <ol class="toc-list">
+              {group.steps.map((s) => (
+                <li value={s.step}>
+                  <a href={`#${copy.anchor}-${s.step}`}>
+                    <span class="step-label">{pad(s.step)}</span>
+                    <span class="toc-text">
+                      <span class="toc-step-title">{s.title}</span>
+                      <span class="toc-summary">{s.summary}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))
+      }
+    </nav>
+
+    {
+      steps.map(({ step, title, Content }) => (
+        <section class="step" id={`${copy.anchor}-${step}`} aria-labelledby={`${copy.anchor}-${step}-title`}>
+          <span class="step-label">
+            {copy.stepPrefix} {pad(step)} / 10
+          </span>
+          <h2 id={`${copy.anchor}-${step}-title`} class="step-title">
+            {title}
+          </h2>
+          <div class="prose">
+            <Content />
+          </div>
+          <a class="back" href="#toc">
+            ↑ {copy.backToTop}
+          </a>
+        </section>
+      ))
+    }
+
+    <aside class="cta card">
+      <h2>{copy.ctaTitle}</h2>
+      <p class="body">{copy.ctaText}</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={routes.download[locale]}>{copy.ctaButton}</a>
+        <a class="btn btn-secondary" href={routes.faq[locale]}>{copy.faqLink}</a>
+      </div>
+    </aside>
+  </div>
+</Base>
+
+<style>
+  .guide {
+    padding-top: 56px;
+    padding-bottom: 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .toc {
+    padding: 28px;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .toc-title {
+    font-size: 22px;
+  }
+
+  .toc-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .toc-group-label {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toc-list a {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    min-height: 44px;
+    padding: 8px 10px;
+    margin: 0 -10px;
+    border-radius: 8px;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .toc-list a:hover {
+    background: var(--color-bg-soft);
+  }
+
+  .toc-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .toc-step-title {
+    font-weight: 700;
+    font-size: 17px;
+  }
+
+  .toc-list a:hover .toc-step-title {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .toc-summary {
+    font-size: 15px;
+    color: var(--color-muted);
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    scroll-margin-top: 16px;
+  }
+
+  .step-title {
+    font-size: clamp(1.625rem, 1.3rem + 1.2vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+  }
+
+  .back {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .cta {
+    background: var(--color-bg-soft);
+    border: 0;
+  }
+
+  .cta h2 {
+    font-size: 26px;
+  }
+
+  .prose :global(table) {
+    display: block;
+    overflow-x: auto;
+  }
+</style>

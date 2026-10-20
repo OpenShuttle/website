@@ -1,0 +1,58 @@
+---
+import Prose from '../layouts/Prose.astro';
+import { github, routes } from '../i18n/routes';
+---
+
+<Prose
+  locale="fr"
+  page="privacy"
+  title="Confidentialité : OpenShuttle ne collecte aucune donnée"
+  description="L’application OpenShuttle ne collecte et n’envoie aucune donnée. Le site openshuttle.app n’utilise aucun cookie et mesure son audience sans suivi personnel."
+  heading="Confidentialité"
+  lead="Vos tournois et les noms de vos joueurs ne quittent pas votre ordinateur."
+  updated="2026-10-20"
+>
+  <h2>L’application OpenShuttle</h2>
+  <ul>
+    <li>
+      <strong>Aucune donnée collectée.</strong> OpenShuttle fonctionne entièrement hors ligne. Il n’établit aucune connexion réseau,
+      n’envoie aucune statistique d’utilisation, aucun rapport de plantage et ne vérifie pas les mises à jour en ligne.
+    </li>
+    <li>
+      <strong>Vos données restent chez vous.</strong> Les tournois (inscrits, clubs, scores, historique) sont enregistrés dans des
+      fichiers <code>.openshuttle</code> sur votre ordinateur, avec des copies de sauvegarde au même endroit. Les réglages, presets et
+      la liste des clubs sont dans un fichier local de l’application.
+    </li>
+    <li>
+      <strong>Vous en êtes responsable.</strong> En tant qu’organisateur, c’est vous qui traitez les noms des joueurs : gardez les
+      fichiers en lieu sûr et supprimez-les quand vous n’en avez plus besoin. Les exports CSV et les archives sont créés uniquement
+      quand vous le demandez, à l’endroit que vous choisissez.
+    </li>
+  </ul>
+
+  <h2>Le site openshuttle.app</h2>
+  <ul>
+    <li><strong>Aucun cookie</strong>, aucun compte, aucun formulaire, aucune publicité.</li>
+    <li>
+      <strong>Hébergement.</strong> Le site est servi par Cloudflare Pages. Comme tout hébergeur, Cloudflare traite des données
+      techniques de connexion (adresse IP, navigateur, page demandée) pour délivrer les pages et protéger le site, selon sa
+      <a href="https://www.cloudflare.com/privacypolicy/">politique de confidentialité</a>.
+    </li>
+    <li>
+      <strong>Mesure d’audience.</strong> Si elle est activée, la mesure d’audience utilise Cloudflare Web Analytics, sans cookie
+      ni empreinte du navigateur : elle compte les visites de façon agrégée, sans suivre les personnes d’un site à l’autre.
+    </li>
+    <li>
+      <strong>Téléchargements.</strong> Les liens de téléchargement redirigent vers les fichiers publiés sur GitHub, soumis à la
+      <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement">déclaration de confidentialité de GitHub</a>.
+    </li>
+    <li>Les polices sont hébergées sur le site lui-même : aucune requête vers Google Fonts ni vers un autre service tiers.</li>
+  </ul>
+
+  <h2>Vos droits</h2>
+  <p>
+    Le site ne conservant aucune donnée personnelle vous concernant, il n’y a rien à consulter ni à supprimer de notre côté. Pour toute
+    question, écrivez-nous via <a href={github.issues}>GitHub</a> ou à l’adresse indiquée dans les
+    <a href={routes.legal.fr}>mentions légales</a>. Vous pouvez aussi saisir la <a href="https://www.cnil.fr/">CNIL</a>.
+  </p>
+</Prose>

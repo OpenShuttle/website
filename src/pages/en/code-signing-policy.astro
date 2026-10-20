@@ -1,0 +1,72 @@
+---
+import Prose from '../../layouts/Prose.astro';
+import { downloadUrl, github, routes } from '../../i18n/routes';
+---
+
+<Prose
+  locale="en"
+  page="signing"
+  title="OpenShuttle code signing policy"
+  description="How OpenShuttle releases are built and signed: only from the public repository, by GitHub continuous integration, after a maintainer’s approval."
+  heading="Code signing policy"
+  lead="How the files you download are built, who approves them and what they do with your data."
+  updated="2026-10-20"
+>
+  <h2>Signing of Windows releases</h2>
+  <p>
+    Free code signing provided by <a href="https://about.signpath.io/">SignPath.io</a>, certificate by
+    <a href="https://signpath.org/">SignPath Foundation</a>.
+  </p>
+  <p>
+    Signing of the Windows installer and portable version through the SignPath Foundation is being set up. Until it is active,
+    Windows shows a warning on first launch: the <a href={routes.download.en}>Download</a> page explains how to carry on.
+  </p>
+  <p>
+    The macOS app is ad-hoc signed, without an Apple developer certificate: macOS asks for a confirmation in System Settings →
+    Privacy &amp; Security. Linux packages are not signed.
+  </p>
+
+  <h2>What gets signed</h2>
+  <ul>
+    <li>Only files built from the source code of the <a href={github.repo}>public OpenShuttle repository</a> are signed.</li>
+    <li>
+      They are built by GitHub Actions continuous integration (the repository’s <code>release-desktop.yml</code> workflow), from a
+      release tag on a commit of the <code>main</code> branch. No file built on a personal computer is ever signed.
+    </li>
+    <li>
+      The workflow checks the tag, builds the app for Windows, macOS and Linux, and publishes the release on GitHub with release notes
+      and <a href={downloadUrl('en', 'checksums')}>SHA-256 checksums</a>.
+    </li>
+    <li>
+      Bundled third-party dependencies (Go and npm libraries) come from their official registries, pinned to exact versions and updated
+      through reviewed pull requests.
+    </li>
+  </ul>
+
+  <h2>Team roles</h2>
+  <ul>
+    <li>
+      <strong>Committers and reviewers</strong>: members of the <a href="https://github.com/OpenShuttle">OpenShuttle organization on GitHub</a>.
+      Every change to <code>main</code> goes through a pull request and continuous integration. External contributions are reviewed by
+      a member before merging.
+    </li>
+    <li>
+      <strong>Approvers</strong>: the project maintainers, currently Thomas Da Rocha. Every signing request for a release is approved
+      manually by an approver.
+    </li>
+  </ul>
+  <p>Team members use two-factor authentication on GitHub and SignPath.</p>
+
+  <h2>Privacy</h2>
+  <p>
+    This program will not transfer any information to other networked systems unless specifically requested by the user or the
+    person installing or operating it. In practice, OpenShuttle makes no network connection at all: your tournaments stay in files on
+    your computer. See the <a href={routes.privacy.en}>privacy policy</a>.
+  </p>
+
+  <h2>Reporting a problem</h2>
+  <p>
+    A signed file looks suspicious, or you found a security issue? Do not make it public: report it privately as explained in the
+    repository’s <a href={`${github.repo}/security/policy`}>security policy</a>.
+  </p>
+</Prose>

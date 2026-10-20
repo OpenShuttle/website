@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../PageHeader.astro';
+import FaqList from '../FaqList.astro';
+import { faq, faqJsonLd } from '../../data/faq';
+import { github, routes, type Locale } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const items = faq[locale];
+
+const copy = {
+  fr: {
+    title: 'FAQ : questions fréquentes sur OpenShuttle',
+    description:
+      'Connexion internet, matériel, formats, catégories, import des inscrits, avertissements Windows et macOS : les réponses aux questions fréquentes sur OpenShuttle.',
+    h1: 'Questions fréquentes',
+    lead: 'Tout ce qu’il faut savoir avant d’organiser votre tournoi avec OpenShuttle.',
+    moreTitle: 'Votre question n’y est pas ?',
+    moreText1: 'Lisez le',
+    moreGuide: 'guide en 10 étapes',
+    moreText2: 'ou posez-la sur',
+  },
+  en: {
+    title: 'FAQ: frequently asked questions about OpenShuttle',
+    description:
+      'Internet connection, equipment, formats, categories, importing entrants, Windows and macOS warnings: answers to the frequently asked questions about OpenShuttle.',
+    h1: 'Frequently asked questions',
+    lead: 'Everything you need to know before running your tournament with OpenShuttle.',
+    moreTitle: 'Your question is not here?',
+    moreText1: 'Read the',
+    moreGuide: '10-step guide',
+    moreText2: 'or ask it on',
+  },
+}[locale];
+---
+
+<Base locale={locale} page="faq" title={copy.title} description={copy.description} jsonLd={[faqJsonLd(items)]}>
+  <PageHeader title={copy.h1} lead={copy.lead} />
+  <div class="faq-page">
+    <div class="container-faq stack">
+      <FaqList items={items} />
+      <div class="card-soft more">
+        <h2>{copy.moreTitle}</h2>
+        <p class="body">
+          {copy.moreText1} <a href={routes.guide[locale]}>{copy.moreGuide}</a>
+          {copy.moreText2} <a href={github.issues}>GitHub</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .container-faq {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px var(--gutter) 88px;
+    gap: 32px;
+  }
+
+  .faq-page :global(.faq-item) {
+    border-color: var(--color-border-strong);
+  }
+
+  .more h2 {
+    font-size: 20px;
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import Prose from '../layouts/Prose.astro';
+import { github, routes } from '../i18n/routes';
+---
+
+<Prose
+  locale="fr"
+  page="legal"
+  title="Mentions légales du site OpenShuttle"
+  description="Mentions légales du site openshuttle.app : éditeur, hébergement, propriété intellectuelle et licences."
+  heading="Mentions légales"
+  updated="2026-10-20"
+>
+  <h2>Éditeur du site</h2>
+  <p>
+    Le site openshuttle.app est édité par <span class="todo">[À COMPLÉTER : nom de la personne ou de l’association]</span>,
+    <span class="todo">[À COMPLÉTER : adresse]</span>.<br />
+    Contact : <span class="todo">[À COMPLÉTER : adresse e-mail]</span>.<br />
+    Directeur ou directrice de la publication : <span class="todo">[À COMPLÉTER]</span>.
+  </p>
+
+  <h2>Hébergement</h2>
+  <p>
+    Cloudflare, Inc. (service Cloudflare Pages), 101 Townsend Street, San Francisco, CA 94107, États-Unis,
+    <a href="https://www.cloudflare.com/">cloudflare.com</a>. <span class="todo">[À COMPLÉTER : vérifier l’adresse et le téléphone de l’hébergeur]</span>
+  </p>
+  <p>
+    Les fichiers de l’application sont publiés sur GitHub (GitHub, Inc.), dans le dépôt <a href={github.repo}>OpenShuttle/openshuttle-app</a>.
+  </p>
+
+  <h2>Propriété intellectuelle et licences</h2>
+  <ul>
+    <li>
+      Le code de l’application OpenShuttle et celui de ce site sont des logiciels libres, sous licence
+      <a href="https://www.gnu.org/licenses/agpl-3.0.fr.html">GNU AGPL version 3 ou ultérieure</a>.
+    </li>
+    <li>
+      Les textes et captures d’écran du site sont sous licence
+      <a href="https://creativecommons.org/licenses/by/4.0/deed.fr">Creative Commons Attribution 4.0 (CC BY 4.0)</a>, sauf mention
+      contraire.
+    </li>
+    <li>
+      Le nom OpenShuttle et son logo ne sont pas couverts par ces licences : vous pouvez les utiliser pour parler du projet, pas pour
+      faire croire qu’une autre version ou un autre service est le projet officiel.
+    </li>
+  </ul>
+
+  <h2>Absence d’affiliation</h2>
+  <p>
+    OpenShuttle est un projet indépendant, développé par des bénévoles. Il n’est ni affilié, ni soutenu, ni approuvé par la
+    Fédération française de badminton (FFBaD) ni par aucune autre fédération.
+  </p>
+
+  <h2>Données personnelles</h2>
+  <p>Voir la <a href={routes.privacy.fr}>politique de confidentialité</a>.</p>
+</Prose>

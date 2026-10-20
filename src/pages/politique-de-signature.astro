@@ -1,0 +1,78 @@
+---
+import Prose from '../layouts/Prose.astro';
+import { downloadUrl, github, routes } from '../i18n/routes';
+---
+
+<Prose
+  locale="fr"
+  page="signing"
+  title="Politique de signature du code d’OpenShuttle"
+  description="Comment les versions d’OpenShuttle sont construites et signées : uniquement depuis le dépôt public, par l’intégration continue GitHub, après approbation d’un mainteneur."
+  heading="Politique de signature du code"
+  lead="Comment les fichiers que vous téléchargez sont construits, qui les approuve et ce qu’ils font de vos données."
+  updated="2026-10-20"
+>
+  <h2>Signature des versions Windows</h2>
+  <p>
+    Free code signing provided by <a href="https://about.signpath.io/">SignPath.io</a>, certificate by
+    <a href="https://signpath.org/">SignPath Foundation</a>.
+  </p>
+  <p>
+    La signature de l’installateur et de la version portable Windows par la SignPath Foundation est en cours de mise en place.
+    Tant qu’elle n’est pas active, Windows affiche un avertissement au premier lancement : la page
+    <a href={routes.download.fr}>Télécharger</a> explique comment continuer.
+  </p>
+  <p>
+    L’application macOS est signée ad hoc, sans certificat de développeur Apple : macOS demande une confirmation dans Réglages
+    système → Confidentialité et sécurité. Les paquets Linux ne sont pas signés.
+  </p>
+
+  <h2>Ce qui est signé</h2>
+  <ul>
+    <li>
+      Seuls les fichiers construits à partir du code source du <a href={github.repo}>dépôt public OpenShuttle</a> sont signés.
+    </li>
+    <li>
+      Ils sont construits par l’intégration continue GitHub Actions (le workflow <code>release-desktop.yml</code> du dépôt), à partir
+      d’une étiquette de version posée sur un commit de la branche <code>main</code>. Aucun fichier construit sur un poste personnel
+      n’est signé.
+    </li>
+    <li>
+      Le workflow vérifie l’étiquette, construit l’application pour Windows, macOS et Linux, publie la version sur GitHub avec les
+      notes de version et les <a href={downloadUrl('fr', 'checksums')}>sommes de contrôle SHA-256</a>.
+    </li>
+    <li>
+      Les dépendances tierces incluses (bibliothèques Go et npm) proviennent de leurs dépôts officiels, épinglées à des versions précises
+      et mises à jour par des demandes de fusion relues.
+    </li>
+  </ul>
+
+  <h2>Rôles de l’équipe</h2>
+  <ul>
+    <li>
+      <strong>Auteurs et relecteurs</strong> : les membres de l’<a href="https://github.com/OpenShuttle">organisation OpenShuttle sur GitHub</a>.
+      Toute modification de <code>main</code> passe par une demande de fusion et l’intégration continue. Les contributions externes
+      sont relues par un membre avant fusion.
+    </li>
+    <li>
+      <strong>Approbateurs</strong> : les mainteneurs du projet, actuellement Thomas Da Rocha. Chaque demande de signature d’une
+      version est approuvée manuellement par un approbateur.
+    </li>
+  </ul>
+  <p>
+    Les membres de l’équipe utilisent l’authentification à deux facteurs sur GitHub et sur SignPath.
+  </p>
+
+  <h2>Confidentialité</h2>
+  <p>
+    Ce programme ne transfère aucune information vers d’autres systèmes en réseau, sauf demande expresse de la personne qui
+    l’installe ou l’utilise. En pratique, OpenShuttle n’établit aucune connexion réseau : vos tournois restent dans des fichiers sur
+    votre ordinateur. Voir la <a href={routes.privacy.fr}>politique de confidentialité</a>.
+  </p>
+
+  <h2>Signaler un problème</h2>
+  <p>
+    Un fichier signé qui vous semble suspect, ou une faille de sécurité ? Ne la publiez pas : signalez-la en privé, comme l’explique
+    la <a href={`${github.repo}/security/policy`}>politique de sécurité</a> du dépôt.
+  </p>
+</Prose>
