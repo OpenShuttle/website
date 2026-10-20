@@ -2,6 +2,10 @@
 step: 3
 title: Choisir le format
 summary: Poules, tableaux, consolante et placement complet, à partir d'un preset ou sur mesure.
+images:
+  - src: ../../../assets/guide/03-format-fr.png
+    alt: "L’écran Format : une phase de 3 poules de 4 reliée au tableau principal, les réglages de la phase à droite et l’aperçu pour 12 participants en bas"
+    caption: "Le graphe des phases, ses réglages et l’aperçu"
 ---
 
 Dans **Format**, chaque catégorie a son propre format : une suite de **phases**. Le plus simple est de cliquer sur **Partir d'un preset…** et de choisir un format prêt à l'emploi, par exemple :

@@ -2,6 +2,10 @@
 step: 4
 title: Pointer les arrivées
 summary: Un clic par joueur, un dossard par participant, les retardataires ajoutés sur place.
+images:
+  - src: ../../../assets/guide/04-checkin-fr.png
+    alt: "L’écran Pointage : 40 joueurs présents sur 40, la recherche, et les paires pointées avec leur dossard"
+    caption: "Le pointage avec ses compteurs et la recherche"
 ---
 
 Le jour J, ouvrez **Pointage**. La liste montre chaque joueur avec sa catégorie, son partenaire et son dossard, et une recherche par nom, club ou dossard.

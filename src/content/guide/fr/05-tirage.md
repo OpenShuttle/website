@@ -2,6 +2,10 @@
 step: 5
 title: Faire le tirage avec les têtes de série
 summary: Poules tirées parmi les présents, têtes de série en serpentin, clubs séparés.
+images:
+  - src: ../../../assets/guide/05-draw-fr.png
+    alt: "L’écran Tirage validé : les poules A, B et C du double homme avec les dossards et les clubs des paires"
+    caption: "Les poules tirées, par catégorie"
 ---
 
 Dans **Tirage**, chaque catégorie a sa section. Seuls les participants présents (tous leurs joueurs pointés) sont tirés.

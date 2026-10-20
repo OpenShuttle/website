@@ -2,6 +2,16 @@
 step: 9
 title: Follow the stages and make corrections
 summary: Pool standings, brackets, later stages and correction mode with history.
+images:
+  - src: ../../../assets/guide/09-stages-en.png
+    alt: "The Stages screen: pool A standings with its matches, and the history of actions on the right"
+    caption: "A pool’s standings and the history"
+  - src: ../../../assets/guide/09-bracket-en.png
+    alt: "The Stages screen on the main bracket: quarter-finals, semi-finals, places 5 to 8, final and the places"
+    caption: "The main bracket and its places"
+  - src: ../../../assets/guide/09-correction-en.png
+    alt: "Correction mode on the main bracket: Edit and Clear buttons on a match, with the history"
+    caption: "Correction mode and the history"
 ---
 
 The **Stages** screen shows, category by category, the standings of each pool and the tree of each bracket.

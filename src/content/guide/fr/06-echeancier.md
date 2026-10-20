@@ -3,9 +3,9 @@ step: 6
 title: Organiser l'échéancier
 summary: Ordonner les tours dans une liste, valider, puis déplacer des matchs isolés.
 images:
-  - src: ../../../assets/shot-schedule.png
-    alt: "L’échéancier : l’ordre des tours à gauche, la prévision terrain par terrain à droite"
-    caption: "L’ordre des tours et la prévision par terrain"
+  - src: ../../../assets/guide/06-schedule-fr.png
+    alt: "L’écran Échéancier : le partage des deux catégories, l’ordre des tours à gauche, la frise par terrain au milieu et les matchs restants par équipe à droite"
+    caption: "L’ordre des tours, la frise par terrain et les équipes"
 ---
 
 L'**Échéancier** prévoit chaque match restant, terrain par terrain, avec son heure estimée, à partir de la durée sur le terrain de chaque condition de victoire. Il fixe aussi l'ordre des appels.

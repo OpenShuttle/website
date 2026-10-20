@@ -267,9 +267,14 @@ const groups = [
     color: var(--color-muted);
   }
 
+  /* Same box for every thumbnail, whatever the screenshot's shape. */
   .shots :global(.thumb) {
+    display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    background: var(--color-bg-soft);
     border-radius: 8px;
     border: 1px solid var(--color-border-strong);
     box-shadow: 0 4px 14px rgb(22 24 29 / 0.1);

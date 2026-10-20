@@ -3,9 +3,12 @@ step: 7
 title: Faire jouer depuis la table de marque
 summary: Appeler, terminer, saisir les scores, gérer les scores en attente et les forfaits.
 images:
-  - src: ../../../assets/shot-desk.png
-    alt: "La table de marque : sept terrains, matchs en cours, scores en attente et prochains matchs"
+  - src: ../../../assets/guide/07-desk-fr.png
+    alt: "La table de marque : les terrains en cours, libre ou terminé, les scores en attente et les prochains matchs"
     caption: "Les terrains, les scores en attente et la file"
+  - src: ../../../assets/guide/07-score-fr.png
+    alt: "Le panneau de saisie du score du terrain 4 : deux sets saisis, 15-12 et 15-9, et les boutons de forfait"
+    caption: "La saisie du score, avec les forfaits"
 ---
 
 La **Table de marque** est l'écran où vous passerez l'essentiel de la journée. Chaque terrain a sa carte, dans l'un de trois états :

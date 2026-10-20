@@ -2,6 +2,10 @@
 step: 2
 title: Inscrire les participants
 summary: À la main ou par import CSV, avec le club de chaque joueur.
+images:
+  - src: ../../../assets/guide/02-entrants-fr.png
+    alt: "L’écran Inscrits : la liste des paires avec leur club et leur dossard, et le formulaire Inscrire une paire"
+    caption: "La liste des inscrits et le formulaire d’inscription"
 ---
 
 Dans **Inscrits**, ajoutez les participants de chaque catégorie : un joueur en simple, une paire en double. Chaque joueur a un nom (prénom et nom) et un club, choisi dans la liste des clubs ou ajouté au passage.

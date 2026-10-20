@@ -3,9 +3,9 @@ step: 8
 title: Show the display screen on a second screen
 summary: A projector or a TV, readable from ten metres, hands off.
 images:
-  - src: ../../../assets/shot-display.png
-    alt: "The display screen: a match called on court 7, the courts in play and a pool’s standings"
-    caption: "The called match, the courts and standings"
+  - src: ../../../assets/guide/08-display-en.png
+    alt: "The display screen: the called match in very large type on court 7, the grid of courts, the previous calls and a pool’s standings"
+    caption: "The display screen, as the hall sees it"
 ---
 
 Plug a projector or a TV into the control desk computer over HDMI. In the top bar, the display screen button opens a second window and lets you choose the monitor; make it full screen with its own button or a double-click.

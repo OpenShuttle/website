@@ -2,6 +2,10 @@
 step: 3
 title: Choose the format
 summary: Pools, brackets, consolation and full placement, from a preset or tailor-made.
+images:
+  - src: ../../../assets/guide/03-format-en.png
+    alt: "The Format screen: a stage of 3 pools of 4 linked to the main bracket, the stage settings on the right and the preview for 12 entrants below"
+    caption: "The stage graph, its settings and the preview"
 ---
 
 In **Format**, each category has its own format: a chain of **stages**. The easiest way is to click **Start from a preset…** and pick a ready-made format, for example:

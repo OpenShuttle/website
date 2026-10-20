@@ -2,6 +2,10 @@
 step: 4
 title: Check in the players
 summary: One click per player, one bib per entrant, late entries added on site.
+images:
+  - src: ../../../assets/guide/04-checkin-en.png
+    alt: "The Check-in screen: 40 of 40 players present, the search, and the checked-in pairs with their bib numbers"
+    caption: "Check-in with its counters and search"
 ---
 
 On the day, open **Check-in**. The list shows each player with their category, partner and bib, and a search by name, club or bib number.

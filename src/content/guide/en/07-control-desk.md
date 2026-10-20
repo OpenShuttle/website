@@ -3,9 +3,12 @@ step: 7
 title: Run the matches from the control desk
 summary: Call, end, enter scores, handle pending scores and forfeits.
 images:
-  - src: ../../../assets/shot-desk.png
-    alt: "The control desk: seven courts, matches in progress, pending scores and next matches"
+  - src: ../../../assets/guide/07-desk-en.png
+    alt: "The control desk: courts playing, free or finished, the pending scores and the next matches"
     caption: "Courts, pending scores and the queue"
+  - src: ../../../assets/guide/07-score-en.png
+    alt: "The score panel of court 4: two sets entered, 15-12 and 15-9, and the forfeit buttons"
+    caption: "Entering a score, with the forfeits"
 ---
 
 The **Control desk** is where you will spend most of the day. Each court has its card, in one of three states:

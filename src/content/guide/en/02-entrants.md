@@ -2,6 +2,10 @@
 step: 2
 title: Add the entrants
 summary: By hand or from a CSV file, with each player's club.
+images:
+  - src: ../../../assets/guide/02-entrants-en.png
+    alt: "The Entrants screen: the list of pairs with their club and bib number, and the Add a pair form"
+    caption: "The entrants list and the entry form"
 ---
 
 In **Entrants**, add the entrants of each category: a player in singles, a pair in doubles. Each player has a name (first and last name) and a club, picked from the club list or added on the way.

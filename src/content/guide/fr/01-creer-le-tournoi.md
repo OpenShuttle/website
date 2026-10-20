@@ -2,6 +2,13 @@
 step: 1
 title: Créer le tournoi et ses catégories
 summary: Un fichier par tournoi, une ou deux catégories, le nombre de terrains et le repos minimum.
+images:
+  - src: ../../../assets/guide/01-home-fr.png
+    alt: "L’écran d’accueil d’OpenShuttle : la liste des tournois récents avec les boutons Nouveau tournoi et Ouvrir un fichier"
+    caption: "L’accueil : tournois récents et Nouveau tournoi"
+  - src: ../../../assets/guide/01-infos-fr.png
+    alt: "L’écran Infos du tournoi : le nom, les catégories Double homme et Double dame sélectionnées, 7 terrains et 10 minutes de repos minimum"
+    caption: "Infos : catégories, terrains et repos minimum"
 ---
 
 Sur l'écran d'accueil, cliquez sur **Nouveau tournoi** et donnez-lui un nom. OpenShuttle crée un fichier `.openshuttle` sur votre ordinateur : tout le tournoi y est enregistré, action après action. Préparez-le tranquillement chez vous les jours précédents, il pourra encore changer le jour J.

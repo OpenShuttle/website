@@ -7,9 +7,12 @@ import ZoomableShot from '../ZoomableShot.astro';
 import FaqList from '../FaqList.astro';
 import { faq } from '../../data/faq';
 import { author, github, routes, type Locale } from '../../i18n/routes';
-import shotDesk from '../../assets/shot-desk.png';
-import shotSchedule from '../../assets/shot-schedule.png';
-import shotDisplay from '../../assets/shot-display.png';
+import shotDeskFr from '../../assets/shot-desk.png';
+import shotScheduleFr from '../../assets/shot-schedule.png';
+import shotDisplayFr from '../../assets/shot-display.png';
+import shotDeskEn from '../../assets/guide/07-desk-en.png';
+import shotScheduleEn from '../../assets/guide/06-schedule-en.png';
+import shotDisplayEn from '../../assets/guide/08-display-en.png';
 
 interface Props {
   locale: Locale;
@@ -18,6 +21,9 @@ interface Props {
 const { locale } = Astro.props;
 
 const copy = home[locale];
+// Screenshots of the app in the page's language.
+const [shotDesk, shotSchedule, shotDisplay] =
+  locale === 'fr' ? [shotDeskFr, shotScheduleFr, shotDisplayFr] : [shotDeskEn, shotScheduleEn, shotDisplayEn];
 
 const site = Astro.site!;
 const softwareApplication = {

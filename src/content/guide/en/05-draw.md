@@ -2,6 +2,10 @@
 step: 5
 title: Run the draw with seeds
 summary: Pools drawn from present entrants, seeds placed in a snake, club mates kept apart.
+images:
+  - src: ../../../assets/guide/05-draw-en.png
+    alt: "The confirmed Draw screen: men’s doubles pools A, B and C with the bib numbers and clubs of the pairs"
+    caption: "The drawn pools, per category"
 ---
 
 In **Draw**, each category has its own section. Only present entrants (all their players checked in) are drawn.

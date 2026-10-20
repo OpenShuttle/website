@@ -2,6 +2,16 @@
 step: 9
 title: Suivre les phases et corriger
 summary: Classements de poules, tableaux, phases suivantes et mode correction avec historique.
+images:
+  - src: ../../../assets/guide/09-stages-fr.png
+    alt: "L’écran Phases : le classement de la poule A avec ses matchs et l’historique des actions à droite"
+    caption: "Le classement d’une poule et l’historique"
+  - src: ../../../assets/guide/09-bracket-fr.png
+    alt: "L’écran Phases sur le tableau principal : quarts, demi-finales, places 5 à 8, finale et classement des places"
+    caption: "Le tableau principal et ses places"
+  - src: ../../../assets/guide/09-correction-fr.png
+    alt: "Le mode correction sur le tableau principal : les boutons Modifier et Effacer sur un match, avec l’historique"
+    caption: "Le mode correction et l’historique"
 ---
 
 L'écran **Phases** montre, catégorie par catégorie, le classement de chaque poule et l'arbre de chaque tableau.
