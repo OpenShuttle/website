@@ -1,0 +1,14 @@
+// Cloudflare Worker serving the static site (no Worker script: assets only).
+// Built by `npm run build` into dist/, deployed by `npx wrangler deploy`.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "openshuttle-website",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // dist/404.html, served with a 404 status for unknown paths.
+    "not_found_handling": "404-page",
+    // Directory format (/guide/ → dist/guide/index.html), like the canonical URLs.
+    "html_handling": "force-trailing-slash"
+  }
+}

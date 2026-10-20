@@ -4,7 +4,7 @@ Source of [openshuttle.app](https://openshuttle.app), the showcase site of
 [OpenShuttle](https://github.com/OpenShuttle/openshuttle-app), the free and
 offline badminton club tournament app.
 
-Static site built with [Astro](https://astro.build), hosted on Cloudflare Pages.
+Static site built with [Astro](https://astro.build), hosted on Cloudflare Workers (static assets, no Worker script).
 French is the reference language (at `/`), English lives under `/en/`.
 
 ## Run it
@@ -52,32 +52,46 @@ Redirects that the app's release workflow points to the latest release files
 (see `docs/releasing.md` in the app repository). Never link to a versioned
 GitHub file from the site.
 
-Bulk Redirects run before Pages; `public/_redirects` only sends these paths to
-the latest GitHub release page while the list does not exist yet.
+Bulk Redirects run before the Worker; `public/_redirects` (read by Workers
+static assets from `dist/`) only sends these paths to the latest GitHub release
+page while the list does not exist yet.
 
-## Deploy (Cloudflare Pages)
+## Deploy (Cloudflare Workers)
 
-Cloudflare Pages builds and deploys from GitHub: every push to `main` goes to
-production, every pull request gets a preview URL. GitHub Actions
-(`.github/workflows/ci.yml`) only checks that the site builds.
+The site is a Cloudflare Worker with static assets only, configured in
+`wrangler.jsonc`: it serves `dist/`, returns `dist/404.html` for unknown paths,
+and applies `dist/_redirects`. Cloudflare builds and deploys from GitHub: every
+push to `main` goes to production, other branches and pull requests get preview
+URLs. GitHub Actions (`.github/workflows/ci.yml`) only checks that the site
+builds.
 
-One-time setup, in Cloudflare **Workers & Pages → Create → Pages → Connect to Git**:
+Check a deployment locally without a Cloudflare login:
+
+```bash
+npm run build
+npx wrangler deploy --dry-run
+```
+
+One-time setup, in Cloudflare **Workers & Pages → Create → Import a repository**
+(pick `OpenShuttle/website`):
 
 | Setting | Value |
 | --- | --- |
-| Repository | `OpenShuttle/website` |
+| Project name | `openshuttle-website` (must match `name` in `wrangler.jsonc`) |
 | Production branch | `main` |
-| Framework preset | Astro |
 | Build command | `npm run build` |
-| Build output directory | `dist` |
-| Environment variable | `NODE_VERSION` = `24` |
+| Deploy command | `npx wrangler deploy` |
+| Non-production branch deploy command | `npx wrangler versions upload` (default, for preview builds) |
+| Build variable | `NODE_VERSION` = `24`, if the build image does not pick up `.nvmrc` |
 
-Then **Custom domains**: add `openshuttle.app` (the zone is on the same
-Cloudflare account; HTTPS is required for `.app` and is automatic), and
-optionally `www.openshuttle.app` redirected to the apex with a redirect rule.
+Then, on the Worker, **Settings → Domains & Routes → Add → Custom domain**:
+`openshuttle.app` (the zone is on the same Cloudflare account; HTTPS is
+required for `.app` and is automatic). Optionally add `www.openshuttle.app` and
+redirect it to the apex with a redirect rule.
 
-Analytics: Cloudflare Web Analytics (no cookies) can be turned on in the Pages
-project (**Metrics → Web Analytics**), or with the snippet left commented in
+Analytics: Cloudflare Web Analytics (no cookies) can be turned on for the
+`openshuttle.app` site in **Analytics & Logs → Web Analytics**, which injects
+the beacon at the edge, or with the snippet left commented in
 `src/layouts/Base.astro`. Update the privacy page if anything else is added.
 
 ## Open Graph images

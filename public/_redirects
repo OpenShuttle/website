@@ -1,6 +1,6 @@
 # Download links are Cloudflare Bulk Redirects to the latest release files,
 # updated by the app's release workflow (see docs/releasing.md in the app repo).
-# Bulk Redirects run before Pages, so these rules are only a fallback while the
+# Bulk Redirects run before the Worker, so these rules are only a fallback while the
 # list does not exist yet: they send visitors to the latest GitHub release.
 /telecharger/windows           https://github.com/OpenShuttle/openshuttle-app/releases/latest 302
 /telecharger/windows-portable  https://github.com/OpenShuttle/openshuttle-app/releases/latest 302
