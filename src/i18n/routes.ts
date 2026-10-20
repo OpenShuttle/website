@@ -31,6 +31,12 @@ export const github = {
   website: 'https://github.com/OpenShuttle/website',
 } as const;
 
+// Author credit (authorship, not the legal publisher: the legal notice stays anonymous).
+export const author = {
+  name: 'Thomas Da Rocha',
+  url: 'https://github.com/OpenShuttle',
+} as const;
+
 export const contact = {
   /** Forwarded by Cloudflare Email Routing; never publish a personal address. */
   email: 'contact@openshuttle.app',

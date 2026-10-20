@@ -1,4 +1,4 @@
-import { routes, type Locale } from '../i18n/routes';
+import { author, github, routes, type Locale } from '../i18n/routes';
 
 export interface FaqItem {
   question: string;
@@ -78,6 +78,10 @@ export const faq: Record<Locale, FaqItem[]> = {
       question: 'En quelles langues est l’application ?',
       answer: '<p>En français et en anglais. La langue se change à tout moment dans les réglages.</p>',
     },
+    {
+      question: 'Qui développe OpenShuttle ?',
+      answer: `<p>OpenShuttle est créé et maintenu par ${author.name}, bénévolement. C’est un logiciel libre : le code est public sur <a href="${github.repo}">GitHub</a> sous licence AGPL, et les contributions sont les bienvenues, qu’il s’agisse de signaler un bug, de proposer une idée ou d’écrire du code (voir le <a href="${github.contributing}">guide de contribution</a>).</p>`,
+    },
   ],
   en: [
     {
@@ -147,6 +151,10 @@ export const faq: Record<Locale, FaqItem[]> = {
     {
       question: 'Which languages does the app speak?',
       answer: '<p>English and French. You can switch the language at any time in the settings.</p>',
+    },
+    {
+      question: 'Who makes OpenShuttle?',
+      answer: `<p>OpenShuttle is created and maintained by ${author.name}, as a volunteer. It is free and open source software: the code is public on <a href="${github.repo}">GitHub</a> under the AGPL licence, and contributions are welcome, whether reporting a bug, suggesting an idea or writing code (see the <a href="${github.contributing}">contributing guide</a>).</p>`,
     },
   ],
 };

@@ -24,6 +24,7 @@ export const ui = {
     contact: 'Contact',
     footerLicence: 'Code de l’application et du site sous licence AGPL-3.0, contenus du site sous licence CC BY 4.0.',
     footerLicenceLink: 'Code source du site',
+    createdBy: 'Créé et maintenu par',
   },
   en: {
     skip: 'Skip to content',
@@ -47,5 +48,6 @@ export const ui = {
     contact: 'Contact',
     footerLicence: 'App and website code under AGPL-3.0, website content under CC BY 4.0.',
     footerLicenceLink: 'Website source code',
+    createdBy: 'Created and maintained by',
   },
 } as const satisfies Record<Locale, Record<string, string>>;

@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Icon from '../Icon.astro';
 import FaqList from '../FaqList.astro';
 import { faq } from '../../data/faq';
-import { github, routes, type Locale } from '../../i18n/routes';
+import { author, github, routes, type Locale } from '../../i18n/routes';
 import shotDesk from '../../assets/shot-desk.png';
 import shotSchedule from '../../assets/shot-schedule.png';
 import shotDisplay from '../../assets/shot-display.png';
@@ -216,6 +216,8 @@ const softwareApplication = {
   image: new URL(`/og/openshuttle-${locale}.png`, site).href,
   screenshot: new URL(shotDesk.src, site).href,
   codeRepository: github.repo,
+  author: { '@type': 'Person', name: author.name, url: author.url },
+  creator: { '@type': 'Person', name: author.name, url: author.url },
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 

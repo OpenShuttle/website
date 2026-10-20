@@ -1,5 +1,5 @@
 ---
-import { contact, github, routes, type Locale } from '../i18n/routes';
+import { author, contact, github, routes, type Locale } from '../i18n/routes';
 import { ui } from '../i18n/ui';
 
 interface Props {
@@ -15,6 +15,7 @@ const t = ui[locale];
     <div class="footer-about">
       <span class="footer-name">OpenShuttle</span>
       <p>{t.footerTagline}</p>
+      <p class="footer-credit">{t.createdBy} <a href={author.url}>{author.name}</a></p>
       <p class="footer-licence">
         {t.footerLicence} <a href={github.website}>{t.footerLicenceLink}</a>
       </p>
@@ -107,6 +108,7 @@ const t = ui[locale];
     color: #ffffff;
   }
 
+  .footer-credit a,
   .footer-licence a {
     display: inline;
   }
