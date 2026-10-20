@@ -94,6 +94,7 @@ const groups = [
                       locale={locale}
                       src={img.src}
                       alt={img.alt}
+                      caption={img.caption}
                       class="thumb"
                       widths={[320, 480, 640]}
                       sizes="(min-width: 640px) 240px, 72vw"
@@ -186,8 +187,9 @@ const groups = [
       top: 96px;
     }
 
-    .toc,
-    .back {
+    /* Replaced by the side column (more specific than the rules below). */
+    .guide .toc,
+    .guide .back {
       display: none;
     }
   }

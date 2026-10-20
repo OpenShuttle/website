@@ -13,16 +13,18 @@ interface Props {
   class?: string;
   widths: number[];
   sizes: string;
+  /** Shown under the image in the lightbox (the alt text otherwise). */
+  caption?: string;
   /** The first screenshot of the page loads at once, the others lazily. */
   eager?: boolean;
 }
 
-const { locale, src, alt, class: className = 'shot', widths, sizes, eager = false } = Astro.props;
+const { locale, src, alt, caption, class: className = 'shot', widths, sizes, eager = false } = Astro.props;
 const full = await getImage({ src, format: 'webp', width: src.width, quality: 85 });
 const label = locale === 'fr' ? 'Agrandir l’image' : 'Enlarge the image';
 ---
 
-<a class="zoomable" href={full.src} data-zoom data-alt={alt}>
+<a class="zoomable" href={full.src} data-zoom data-alt={alt} data-caption={caption ?? alt}>
   <Picture
     src={src}
     alt={alt}
