@@ -44,6 +44,8 @@ const copy = {
     integrity: 'Vérifier l’intégrité :',
     checksums: 'sommes de contrôle SHA-256',
     source: 'Code source sur',
+    signingIntro: 'La signature gratuite des versions Windows par la SignPath Foundation est en cours de mise en place.',
+    signingPolicy: 'Politique de signature',
     firstH2: 'Premier lancement',
     firstText:
       'Votre système peut afficher un avertissement la première fois : OpenShuttle est un logiciel libre récent, pas encore reconnu par Windows et macOS. C’est attendu, voici comment continuer.',
@@ -100,6 +102,8 @@ const copy = {
     integrity: 'Check integrity:',
     checksums: 'SHA-256 checksums',
     source: 'Source code on',
+    signingIntro: 'Free signing of the Windows releases by the SignPath Foundation is being set up.',
+    signingPolicy: 'Code signing policy',
     firstH2: 'First launch',
     firstText:
       'Your system may show a warning the first time: OpenShuttle is new open source software, not yet recognised by Windows and macOS. This is expected, here is how to carry on.',
@@ -211,6 +215,11 @@ const systems = [
       <p class="small muted">
         {copy.integrity} <a href={dl('checksums')}>{copy.checksums}</a> · {copy.source} <a href={github.repo}>GitHub</a>
       </p>
+      <p class="small muted signing">
+        {copy.signingIntro}
+        <span lang="en">Free code signing provided by <a href="https://about.signpath.io/">SignPath.io</a>, certificate by <a href="https://signpath.org/">SignPath Foundation</a>.</span>
+        · <a href={routes.signing[locale]}>{copy.signingPolicy}</a>
+      </p>
     </div>
   </section>
 
@@ -295,6 +304,10 @@ const systems = [
 <style>
   .top-band {
     border-bottom: 1px solid var(--color-border);
+  }
+
+  .signing {
+    margin-top: -16px;
   }
 
   .top {
