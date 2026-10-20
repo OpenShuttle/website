@@ -112,7 +112,7 @@ One-time setup, in Cloudflare **Workers & Pages → Create → Import a reposito
 | Build command | `npm run build` |
 | Deploy command | `npx wrangler deploy` |
 | Non-production branch deploy command | `npx wrangler versions upload` (default, for preview builds) |
-| Build variable | `NODE_VERSION` = `24`, if the build image does not pick up `.nvmrc` |
+| Build variable | `NODE_VERSION` = the version in `.nvmrc` (`24`), if the build image does not pick up `.nvmrc` |
 
 Then, on the Worker, **Settings → Domains & Routes → Add → Custom domain**:
 `openshuttle.app` (the zone is on the same Cloudflare account; HTTPS is
@@ -135,6 +135,17 @@ Regenerate them when the headline or the screenshot changes.
 - Contact address `contact@openshuttle.app` (`contact` in `src/i18n/routes.ts`):
   set up its forwarding in Cloudflare Email Routing.
 - Code signing policy: update once SignPath Foundation signing is active.
+
+## Dependencies
+
+[Renovate](https://docs.renovatebot.com/) keeps dependencies up to date
+(`renovate.json`, same policy as the app): grouped pull requests on Monday
+mornings, 7 days after a release (security fixes at once), signed off for the
+DCO. Astro and its integrations, the Fontsource fonts, Wrangler, GitHub Actions
+and Node.js each come in their own pull request. Node.js is the version in
+`.nvmrc`, read by CI (`node-version-file`) and by the Cloudflare build: when
+Renovate bumps it, update `NODE_VERSION` in the Cloudflare build settings if
+you set it.
 
 ## Licence
 

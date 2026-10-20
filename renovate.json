@@ -1,0 +1,59 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Dependency updates of the website. Merged updates deploy with the next push to main.",
+  "extends": [
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)",
+    ":timezone(Europe/Paris)",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "gitAuthor": "renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
+  "commitBody": "Signed-off-by: {{{gitAuthor}}}",
+  "schedule": ["before 6am on monday"],
+  "minimumReleaseAge": "7 days",
+  "internalChecksFilter": "strict",
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 5,
+  "postUpdateOptions": ["npmDedupe"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on the first day of the month"]
+  },
+  "vulnerabilityAlerts": {
+    "labels": ["dependencies", "security"],
+    "minimumReleaseAge": null,
+    "schedule": ["at any time"]
+  },
+  "packageRules": [
+    {
+      "description": "Pinning keeps the code already in use: no waiting.",
+      "matchUpdateTypes": ["pin", "pinDigest"],
+      "minimumReleaseAge": null
+    },
+    {
+      "description": "Astro and its integrations are released together.",
+      "matchPackageNames": ["astro", "@astrojs/**"],
+      "groupName": "astro"
+    },
+    {
+      "description": "Self-hosted fonts.",
+      "matchPackageNames": ["@fontsource/**", "@fontsource-variable/**"],
+      "groupName": "fontsource"
+    },
+    {
+      "description": "Wrangler deploys the site: on its own, to review its changelog.",
+      "matchPackageNames": ["wrangler"],
+      "groupName": "wrangler"
+    },
+    {
+      "description": "GitHub Actions in one PR.",
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions"
+    },
+    {
+      "description": "Node.js (.nvmrc, read by CI and by the Cloudflare build).",
+      "matchManagers": ["nvm"],
+      "groupName": "node"
+    }
+  ]
+}
