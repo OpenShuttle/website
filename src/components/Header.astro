@@ -1,0 +1,129 @@
+---
+import logo from '../assets/logo.svg';
+import { github, routes, type Locale, type RouteKey } from '../i18n/routes';
+import { ui } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  page: RouteKey | '404';
+}
+
+const { locale, page } = Astro.props;
+const t = ui[locale];
+const other: Locale = locale === 'fr' ? 'en' : 'fr';
+const otherHref = page === '404' ? routes.home[other] : routes[page][other];
+const featuresHref = `${routes.home[locale]}#${locale === 'fr' ? 'fonctionnalites' : 'features'}`;
+const current = (key: RouteKey) => (page === key ? 'page' : undefined);
+---
+
+<header class="site-header">
+  <nav class="container nav" aria-label={t.navLabel}>
+    <a class="brand" href={routes.home[locale]} aria-label={t.homeLabel} aria-current={current('home')}>
+      <img src={logo.src} alt="" width="30" height="35" />
+      <span>OpenShuttle</span>
+    </a>
+    <div class="nav-links">
+      <a href={featuresHref}>{t.features}</a>
+      <a href={routes.guide[locale]} aria-current={current('guide')}>{t.guide}</a>
+      <a href={routes.faq[locale]} aria-current={current('faq')}>{t.faq}</a>
+      <a href={github.repo}>{t.github}</a>
+    </div>
+    <a class="lang" href={otherHref} hreflang={other} lang={other} aria-label={t.otherLangLabel}>{t.otherLang}</a>
+    <a class="btn btn-primary btn-sm" href={routes.download[locale]} aria-current={current('download')}>{t.download}</a>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background: #ffffff;
+  }
+
+  .nav {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 28px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .brand:hover {
+    color: var(--color-text);
+  }
+
+  .brand img {
+    width: 30px;
+    height: 35px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 24px;
+    flex: 1;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .nav-links a,
+  .lang {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .nav-links a[aria-current='page'] {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  .lang {
+    min-width: 44px;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-muted);
+  }
+
+  .lang:hover {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 720px) {
+    .nav {
+      gap: 0 12px;
+    }
+
+    .brand {
+      flex: 1;
+    }
+
+    .nav-links {
+      order: 3;
+      flex-basis: 100%;
+      gap: 0 20px;
+    }
+  }
+</style>

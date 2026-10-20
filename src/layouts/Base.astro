@@ -1,0 +1,87 @@
+---
+import '@fontsource/atkinson-hyperlegible-next/400.css';
+import '@fontsource/atkinson-hyperlegible-next/700.css';
+import '@fontsource/atkinson-hyperlegible-next/800.css';
+import '@fontsource/atkinson-hyperlegible-mono/700.css';
+import font400 from '@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-400-normal.woff2?url';
+import font800 from '@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-800-normal.woff2?url';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { alternatesFor, routes, type Locale, type RouteKey } from '../i18n/routes';
+import { ui } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  page: RouteKey | '404';
+  title: string;
+  description: string;
+  /** Structured data objects, each rendered as its own JSON-LD script. */
+  jsonLd?: object[];
+  /** Search engines skip the page (404). */
+  noindex?: boolean;
+}
+
+const { locale, page, title, description, jsonLd = [], noindex = false } = Astro.props;
+const site = Astro.site!;
+const path = page === '404' ? undefined : routes[page][locale];
+const canonical = path ? new URL(path, site).href : undefined;
+const alternates = path ? alternatesFor(path) : undefined;
+const ogImage = new URL(`/og/openshuttle-${locale}.png`, site).href;
+const ogAlt =
+  locale === 'fr'
+    ? 'OpenShuttle, le logiciel libre de tournois de badminton de club, et sa table de marque'
+    : 'OpenShuttle, the free badminton club tournament software, and its control desk';
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    {alternates?.map((a) => <link rel="alternate" hreflang={a.lang} href={new URL(a.path, site).href} />)}
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#076167" />
+    <link rel="preload" href={font400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={font800} as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OpenShuttle" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta property="og:locale:alternate" content={locale === 'fr' ? 'en_US' : 'fr_FR'} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogAlt} />
+
+    {jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}
+
+    <!--
+      Cloudflare Web Analytics (no cookies), to enable once the site token exists:
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "<TOKEN>"}'></script>
+      Or turn it on in Cloudflare Pages → the project → Metrics, which injects it at the edge.
+    -->
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{ui[locale].skip}</a>
+    <Header locale={locale} page={page} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer locale={locale} />
+  </body>
+</html>

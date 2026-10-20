@@ -1,0 +1,621 @@
+---
+import { Picture } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Icon from '../Icon.astro';
+import FaqList from '../FaqList.astro';
+import { faq } from '../../data/faq';
+import { github, routes, type Locale } from '../../i18n/routes';
+import shotDesk from '../../assets/shot-desk.png';
+import shotSchedule from '../../assets/shot-schedule.png';
+import shotDisplay from '../../assets/shot-display.png';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const copy = {
+  fr: {
+    title: 'OpenShuttle : logiciel gratuit de tournoi de badminton de club',
+    description:
+      'Gérez votre tournoi de badminton de club de bout en bout, sans internet : inscriptions, poules et tableaux, échéancier, table de marque et écran d’appel. Logiciel libre et gratuit pour Windows, macOS et Linux.',
+    pill: 'Logiciel libre et gratuit · Windows, macOS, Linux',
+    h1: 'Le tournoi de votre club, sans tableur ni stress.',
+    lead: 'OpenShuttle gère vos tournois de badminton de club de bout en bout : inscriptions, tirage des poules, échéancier, table de marque et écran d’appel. Sur un seul ordinateur, sans internet.',
+    ctaDownload: 'Télécharger pour Windows',
+    ctaGuide: 'Voir le guide',
+    heroNote: 'Gratuit · sans compte · sans abonnement · aussi pour',
+    heroNoteLink: 'macOS et Linux',
+    deskAlt: 'La table de marque d’OpenShuttle : sept terrains, matchs en cours, scores en attente et prochains matchs',
+    highlightsLabel: 'Points forts',
+    highlights: [
+      { icon: 'offline', title: '100 % hors ligne', text: 'Pas de wifi au gymnase ? Aucun problème.' },
+      { icon: 'twoCategories', title: 'Deux catégories à la fois', text: 'Double hommes et double dames sur les mêmes terrains.' },
+      { icon: 'screen', title: 'Écran d’appel', text: 'Un deuxième écran pour les joueurs et le public.' },
+      { icon: 'undo', title: 'Tout s’annule', text: 'Chaque action est enregistrée et réversible.' },
+    ],
+    featuresId: 'fonctionnalites',
+    featuresEyebrow: 'Toute la journée',
+    featuresH2: 'De l’inscription au podium, un seul outil.',
+    featuresLead:
+      'OpenShuttle suit le déroulé réel d’un tournoi de club. Chaque écran correspond à une étape, et la table de marque sait toujours ce qui vient ensuite.',
+    steps: [
+      {
+        label: '01 · AVANT',
+        title: 'Préparer',
+        items: [
+          'Inscriptions par paire, import et export CSV',
+          'Format libre : poules, tableaux, consolante, classement complet',
+          'Presets réutilisables d’un tournoi à l’autre',
+        ],
+      },
+      {
+        label: '02 · LE JOUR J',
+        title: 'Faire jouer',
+        items: [
+          'Pointage en un clic, dossards attribués à l’arrivée',
+          'Tirage avec têtes de série, clubs séparés dans les poules',
+          'Échéancier, appels, scores, temps de repos',
+        ],
+      },
+      {
+        label: '03 · APRÈS',
+        title: 'Conclure',
+        items: [
+          'Classements de poules et tableaux en direct',
+          'Classement final complet, place par place',
+          'Export des résultats et archive du tournoi',
+        ],
+      },
+    ],
+    scheduleAlt: 'L’échéancier : l’ordre des tours à gauche, la prévision terrain par terrain à droite',
+    scheduleEyebrow: 'Échéancier',
+    scheduleH2: 'Sachez à quelle heure tout le monde joue.',
+    scheduleText:
+      'OpenShuttle prévoit chaque match, terrain par terrain, en tenant compte des temps de repos. Réordonnez les tours d’un glisser-déposer : la prévision se met à jour sous vos yeux.',
+    scheduleChecks: [
+      'Heure de fin estimée de la journée',
+      'Alerte quand un joueur n’a pas eu son repos',
+      'Terrains partagés ou réservés par catégorie',
+    ],
+    displayBadge: 'Écran d’appel',
+    displayH2: 'Les joueurs savent où aller, sans micro.',
+    displayText:
+      'Branchez un vidéoprojecteur ou une télé : le match appelé s’affiche en très grand avec son terrain, les terrains en cours juste à côté, et les classements défilent. Lisible à dix mètres.',
+    displayAlt: 'L’écran d’appel : un match appelé sur le terrain 7, les terrains en cours et le classement d’une poule',
+    eventsEyebrow: 'Les imprévus',
+    eventsH2: 'Pensé pour un bénévole pressé, dans un gymnase.',
+    events: [
+      { title: 'Un forfait ?', text: 'Déclarez-le en deux clics : les matchs restants passent en WO et les classements suivent.' },
+      { title: 'Un score oublié ?', text: 'Le terrain repart tout de suite, le score attend dans la liste des scores en attente.' },
+      { title: 'Une erreur de saisie ?', text: 'Annulez la dernière action, ou corrigez un score dans l’historique.' },
+      { title: 'Une coupure de courant ?', text: 'Chaque action est enregistrée sur le disque, avec une copie de sauvegarde automatique.' },
+    ],
+    dataTitle: 'Vos données restent chez vous',
+    dataText:
+      'Pas de compte, pas de cloud, pas de publicité. Un tournoi, c’est un fichier sur votre ordinateur, que vous gardez, copiez ou archivez comme vous voulez.',
+    openTitle: 'Libre et ouvert',
+    openText: 'Le code est public sous licence AGPL. Une idée, un bug ? Ouvrez une discussion sur',
+    openText2: ', les contributions sont les bienvenues.',
+    faqH2: 'Questions fréquentes',
+    faqMore: 'Toutes les questions',
+    ctaH2: 'Prêt pour votre prochain tournoi ?',
+    ctaText: 'Téléchargez OpenShuttle et suivez le guide : un tournoi complet en dix étapes.',
+    ctaDownloadShort: 'Télécharger',
+    ctaReadGuide: 'Lire le guide',
+    appDescription:
+      'Logiciel libre et hors ligne pour organiser des tournois de badminton de club : inscriptions, poules et tableaux, échéancier, table de marque et écran d’appel.',
+  },
+  en: {
+    title: 'OpenShuttle: free badminton club tournament software',
+    description:
+      'Run your badminton club tournament from start to finish, with no internet: entries, pools and brackets, schedule, control desk and display screen. Free and open source for Windows, macOS and Linux.',
+    pill: 'Free and open source · Windows, macOS, Linux',
+    h1: 'Your club tournament, without spreadsheets or stress.',
+    lead: 'OpenShuttle runs your badminton club tournaments from start to finish: entries, pool draw, schedule, control desk and display screen. On a single computer, with no internet.',
+    ctaDownload: 'Download for Windows',
+    ctaGuide: 'Read the guide',
+    heroNote: 'Free · no account · no subscription · also for',
+    heroNoteLink: 'macOS and Linux',
+    deskAlt: 'The OpenShuttle control desk: seven courts, matches in progress, pending scores and next matches',
+    highlightsLabel: 'Highlights',
+    highlights: [
+      { icon: 'offline', title: '100% offline', text: 'No wifi in the gym? No problem.' },
+      { icon: 'twoCategories', title: 'Two categories at once', text: 'Men’s and women’s doubles on the same courts.' },
+      { icon: 'screen', title: 'Display screen', text: 'A second screen for players and the audience.' },
+      { icon: 'undo', title: 'Everything can be undone', text: 'Every action is recorded and reversible.' },
+    ],
+    featuresId: 'features',
+    featuresEyebrow: 'All day long',
+    featuresH2: 'From entries to the podium, one tool.',
+    featuresLead:
+      'OpenShuttle follows how a club tournament really runs. Each screen is a step, and the control desk always knows what comes next.',
+    steps: [
+      {
+        label: '01 · BEFORE',
+        title: 'Prepare',
+        items: [
+          'Entries by pair, CSV import and export',
+          'Free format: pools, brackets, consolation, full standings',
+          'Presets reused from one tournament to the next',
+        ],
+      },
+      {
+        label: '02 · ON THE DAY',
+        title: 'Play',
+        items: [
+          'One-click check-in, bib numbers handed out on arrival',
+          'Draw with seeds, club mates kept apart in pools',
+          'Schedule, match calls, scores, rest times',
+        ],
+      },
+      {
+        label: '03 · AFTER',
+        title: 'Wrap up',
+        items: [
+          'Live pool standings and brackets',
+          'Full final standings, place by place',
+          'Results export and tournament archive',
+        ],
+      },
+    ],
+    scheduleAlt: 'The schedule: the order of the rounds on the left, the court-by-court forecast on the right',
+    scheduleEyebrow: 'Schedule',
+    scheduleH2: 'Know when everyone plays.',
+    scheduleText:
+      'OpenShuttle forecasts every match, court by court, taking rest times into account. Reorder the rounds by drag and drop: the forecast updates before your eyes.',
+    scheduleChecks: [
+      'Estimated end time of the day',
+      'Warning when a player has not had their rest',
+      'Courts shared or reserved per category',
+    ],
+    displayBadge: 'Display screen',
+    displayH2: 'Players know where to go, no microphone needed.',
+    displayText:
+      'Plug in a projector or a TV: the called match shows in very large type with its court, the courts in play right beside it, and the standings rotate. Readable from ten metres.',
+    displayAlt: 'The display screen: a match called on court 7, the courts in play and a pool’s standings',
+    eventsEyebrow: 'The unexpected',
+    eventsH2: 'Built for a busy volunteer, in a gym.',
+    events: [
+      { title: 'A forfeit?', text: 'Declare it in two clicks: the remaining matches become walkovers and the standings follow.' },
+      { title: 'A forgotten score?', text: 'The court goes on right away, the score waits in the pending scores list.' },
+      { title: 'A typo?', text: 'Undo the last action, or correct a score from the history.' },
+      { title: 'A power cut?', text: 'Every action is written to disk, with an automatic backup copy.' },
+    ],
+    dataTitle: 'Your data stays with you',
+    dataText:
+      'No account, no cloud, no ads. A tournament is a file on your computer, which you keep, copy or archive as you like.',
+    openTitle: 'Free and open',
+    openText: 'The code is public under the AGPL licence. An idea, a bug? Start a discussion on',
+    openText2: ', contributions are welcome.',
+    faqH2: 'Frequently asked questions',
+    faqMore: 'All questions',
+    ctaH2: 'Ready for your next tournament?',
+    ctaText: 'Download OpenShuttle and follow the guide: a full tournament in ten steps.',
+    ctaDownloadShort: 'Download',
+    ctaReadGuide: 'Read the guide',
+    appDescription:
+      'Free, offline software to run badminton club tournaments: entries, pools and brackets, schedule, control desk and display screen.',
+  },
+}[locale];
+
+const site = Astro.site!;
+const softwareApplication = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'OpenShuttle',
+  description: copy.appDescription,
+  url: new URL(routes.home[locale], site).href,
+  downloadUrl: new URL(routes.download[locale], site).href,
+  applicationCategory: 'SportsApplication',
+  operatingSystem: 'Windows 10, Windows 11, macOS, Linux',
+  inLanguage: ['fr', 'en'],
+  isAccessibleForFree: true,
+  license: 'https://www.gnu.org/licenses/agpl-3.0.html',
+  image: new URL(`/og/openshuttle-${locale}.png`, site).href,
+  screenshot: new URL(shotDesk.src, site).href,
+  codeRepository: github.repo,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+};
+
+const homeFaq = faq[locale].filter((item) => item.home);
+---
+
+<Base locale={locale} page="home" title={copy.title} description={copy.description} jsonLd={[softwareApplication]}>
+  <section class="band-soft hero-band">
+    <div class="container hero">
+      <div class="hero-text stack">
+        <span class="pill">{copy.pill}</span>
+        <h1 class="h1">{copy.h1}</h1>
+        <p class="lead hero-lead">{copy.lead}</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={routes.download[locale]}>
+            <Icon name="download" size={20} strokeWidth={2.2} />
+            {copy.ctaDownload}
+          </a>
+          <a class="btn btn-secondary" href={routes.guide[locale]}>{copy.ctaGuide}</a>
+        </div>
+        <span class="small muted">
+          {copy.heroNote} <a href={routes.download[locale]}>{copy.heroNoteLink}</a>
+        </span>
+      </div>
+      <div class="hero-media">
+        <Picture
+          src={shotDesk}
+          alt={copy.deskAlt}
+          class="shot"
+          formats={['avif', 'webp']}
+          widths={[640, 960, 1280]}
+          sizes="(min-width: 1200px) 640px, (min-width: 1040px) 55vw, 100vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="highlights-band" aria-label={copy.highlightsLabel}>
+    <ul class="container grid-auto highlights" style="--min: 240px">
+      {
+        copy.highlights.map((h) => (
+          <li class="highlight">
+            <span class="highlight-icon">
+              <Icon name={h.icon as 'offline'} size={28} />
+            </span>
+            <div>
+              <strong class="highlight-title">{h.title}</strong>
+              <span class="highlight-text">{h.text}</span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id={copy.featuresId} class="container features" aria-labelledby="features-title">
+    <div class="section-head stack">
+      <span class="eyebrow">{copy.featuresEyebrow}</span>
+      <h2 id="features-title" class="h2">{copy.featuresH2}</h2>
+      <p class="body-lg">{copy.featuresLead}</p>
+    </div>
+    <div class="grid-auto steps">
+      {
+        copy.steps.map((step) => (
+          <div class="card step">
+            <span class="step-label">{step.label}</span>
+            <h3>{step.title}</h3>
+            <ul class="list">
+              {step.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="container split" aria-labelledby="schedule-title">
+    <div class="split-media">
+      <Picture src={shotSchedule} alt={copy.scheduleAlt} class="shot shot-soft" sizes="(min-width: 1200px) 640px, (min-width: 1040px) 55vw, 100vw" formats={['avif', 'webp']} widths={[640, 960, 1280]} loading="lazy" />
+    </div>
+    <div class="split-text stack">
+      <span class="eyebrow">{copy.scheduleEyebrow}</span>
+      <h2 id="schedule-title" class="h2-sm">{copy.scheduleH2}</h2>
+      <p class="body-lg">{copy.scheduleText}</p>
+      <ul class="checks">
+        {
+          copy.scheduleChecks.map((c) => (
+            <li>
+              <span aria-hidden="true">✓</span>
+              {c}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="band-dark on-dark" aria-labelledby="display-title">
+    <div class="container split split-dark">
+      <div class="split-text stack">
+        <span class="badge-accent">{copy.displayBadge}</span>
+        <h2 id="display-title" class="h2-sm">{copy.displayH2}</h2>
+        <p class="body-lg on-dark-text">{copy.displayText}</p>
+      </div>
+      <div class="split-media">
+        <Picture src={shotDisplay} alt={copy.displayAlt} class="shot shot-dark" sizes="(min-width: 1200px) 640px, (min-width: 1040px) 55vw, 100vw" formats={['avif', 'webp']} widths={[640, 960, 1440]} loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="container events" aria-labelledby="events-title">
+    <div class="section-head stack">
+      <span class="eyebrow">{copy.eventsEyebrow}</span>
+      <h2 id="events-title" class="h2">{copy.eventsH2}</h2>
+    </div>
+    <div class="grid-auto events-grid" style="--min: 250px">
+      {
+        copy.events.map((e) => (
+          <div class="card-soft">
+            <h3>{e.title}</h3>
+            <p class="body">{e.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="container values">
+    <div class="grid-auto" style="--min: 320px">
+      <div class="card value">
+        <span class="value-icon"><Icon name="lock" size={32} /></span>
+        <h3>{copy.dataTitle}</h3>
+        <p class="body">{copy.dataText}</p>
+      </div>
+      <div class="card value">
+        <span class="value-icon"><Icon name="code" size={32} /></span>
+        <h3>{copy.openTitle}</h3>
+        <p class="body">{copy.openText} <a href={github.repo}>GitHub</a>{copy.openText2}</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="faq" class="band-soft faq-band" aria-labelledby="faq-title">
+    <div class="container-faq stack">
+      <h2 id="faq-title" class="h2">{copy.faqH2}</h2>
+      <FaqList items={homeFaq} />
+      <a class="faq-more" href={routes.faq[locale]}>{copy.faqMore} →</a>
+    </div>
+  </section>
+
+  <section class="band-primary" aria-labelledby="cta-title">
+    <div class="container cta">
+      <div class="cta-text stack">
+        <h2 id="cta-title" class="h2">{copy.ctaH2}</h2>
+        <p class="body-lg cta-lead">{copy.ctaText}</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-accent" href={routes.download[locale]}>{copy.ctaDownloadShort}</a>
+        <a class="btn btn-outline-light" href={routes.guide[locale]}>{copy.ctaReadGuide}</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero-band {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero {
+    padding-top: 72px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .hero-text {
+    flex: 1 1 400px;
+    min-width: 0;
+    gap: 22px;
+  }
+
+  .hero-lead {
+    max-width: 560px;
+  }
+
+  .hero-media {
+    flex: 1 1 560px;
+    min-width: 0;
+  }
+
+  .highlights-band {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .highlights {
+    list-style: none;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 28px;
+  }
+
+  .highlight {
+    display: flex;
+    gap: 14px;
+  }
+
+  .highlight-icon,
+  .value-icon {
+    flex: none;
+    color: var(--color-primary);
+  }
+
+  .highlight-title {
+    display: block;
+    font-weight: 800;
+    font-size: 17px;
+  }
+
+  .highlight-text {
+    display: block;
+    color: var(--color-muted);
+    font-size: 15px;
+  }
+
+  .section-head {
+    max-width: 720px;
+    gap: 14px;
+  }
+
+  .features {
+    padding-top: 88px;
+    padding-bottom: 40px;
+  }
+
+  .steps {
+    margin-top: 44px;
+  }
+
+  .step {
+    gap: 14px;
+  }
+
+  .step h3 {
+    font-size: 24px;
+  }
+
+  .split {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .split-dark {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .split-media {
+    flex: 1 1 560px;
+    min-width: 0;
+  }
+
+  .split-text {
+    flex: 1 1 360px;
+    min-width: 0;
+    gap: 16px;
+  }
+
+  .shot-soft {
+    box-shadow: 0 18px 44px rgb(22 24 29 / 0.14);
+  }
+
+  .shot-dark {
+    border-color: #3a3f4b;
+    box-shadow: none;
+  }
+
+  .checks {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .checks li {
+    display: flex;
+    gap: 10px;
+  }
+
+  .checks span {
+    color: var(--color-primary);
+    font-weight: 800;
+  }
+
+  .badge-accent {
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: var(--color-accent);
+    color: var(--color-text);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .on-dark-text {
+    color: var(--color-on-dark);
+  }
+
+  .events {
+    padding-top: 88px;
+    padding-bottom: 40px;
+  }
+
+  .events-grid {
+    margin-top: 40px;
+  }
+
+  .values {
+    padding-top: 48px;
+    padding-bottom: 88px;
+  }
+
+  .value {
+    padding: 32px;
+  }
+
+  .faq-band {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .container-faq {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 88px var(--gutter);
+    gap: 28px;
+  }
+
+  .faq-more {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .cta {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+
+  .cta-text {
+    flex: 1 1 480px;
+    gap: 12px;
+  }
+
+  .cta-lead {
+    color: var(--color-primary-soft);
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-top: 48px;
+      padding-bottom: 56px;
+      gap: 36px;
+    }
+
+    .features,
+    .events {
+      padding-top: 64px;
+    }
+
+    .split-dark,
+    .container-faq,
+    .cta {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+
+    .values {
+      padding-bottom: 64px;
+    }
+  }
+</style>
