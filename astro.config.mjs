@@ -1,7 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import { alternatesFor } from './src/i18n/routes.ts';
+import { appendFile } from 'node:fs/promises';
+import { alternatesFor, routes } from './src/i18n/routes.ts';
 
 export const site = 'https://openshuttle.app';
 
@@ -12,6 +13,18 @@ export default defineConfig({
   compressHTML: false,
   build: { format: 'directory' },
   integrations: [
+    {
+      // Each HTML page announces its Markdown version in a Link header too,
+      // like its <link rel="alternate" type="text/markdown"> (Workers _headers).
+      name: 'markdown-link-headers',
+      hooks: {
+        'astro:build:done': async ({ dir }) => {
+          const paths = Object.values(routes).flatMap((r) => [r.fr, r.en]);
+          const rules = paths.map((p) => `${p}\n  Link: <${p}index.md>; rel="alternate"; type="text/markdown"\n`);
+          await appendFile(new URL('_headers', dir), `\n# Markdown version of each page (generated)\n${rules.join('\n')}`);
+        },
+      },
+    },
     sitemap({
       filter: (page) => !page.endsWith('/404/'),
       serialize(item) {

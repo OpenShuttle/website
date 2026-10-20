@@ -1,16 +1,25 @@
+# Discovery links for AI agents and crawlers (RFC 8288), on every response:
+# the sitemap and llms.txt, which describes the site and lists its Markdown pages.
+/*
+  Link: </sitemap-index.xml>; rel="sitemap"; type="application/xml"
+  Link: </llms.txt>; rel="describedby"; type="text/plain"
+
+# The Link to each page's Markdown version is appended at build from src/i18n/routes.ts
+# (see astro.config.mjs), so unknown paths never get one.
+
 # Markdown versions of the pages (/<page>/index.md) and llms.txt, for AI agents.
 # Each Markdown file points search engines to its HTML page as the canonical one.
 /index.md
   Content-Type: text/markdown; charset=utf-8
   Link: <https://openshuttle.app/>; rel="canonical"
 
-/:path/index.md
+/:page/index.md
   Content-Type: text/markdown; charset=utf-8
-  Link: <https://openshuttle.app/:path/>; rel="canonical"
+  Link: <https://openshuttle.app/:page/>; rel="canonical"
 
-/en/:path/index.md
+/en/:page/index.md
   Content-Type: text/markdown; charset=utf-8
-  Link: <https://openshuttle.app/en/:path/>; rel="canonical"
+  Link: <https://openshuttle.app/en/:page/>; rel="canonical"
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8

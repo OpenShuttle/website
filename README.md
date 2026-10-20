@@ -33,7 +33,7 @@ src/lib/markdown.ts       Markdown versions of the pages, for AI assistants
 src/assets/               app screenshots and logo, optimized to AVIF/WebP at build
 public/og/                Open Graph images (1200×630), one per language
 public/_redirects         fallback for the download links (see below)
-public/_headers           content type and canonical link of the Markdown files
+public/_headers           Link headers for agents, content type and canonical link of the Markdown files
 public/robots.txt         crawling rules and Content Signals
 ```
 
@@ -59,6 +59,11 @@ pages, without navigation or footer:
   the HTML page, so search engines keep the HTML version;
 - `/llms.txt` ([llmstxt.org](https://llmstxt.org)) summarises the project and
   links to the Markdown pages in both languages;
+- every response carries `Link` headers (RFC 8288) to the sitemap
+  (`rel="sitemap"`) and to `/llms.txt` (`rel="describedby"`); each page also
+  links to its Markdown version (`rel="alternate"; type="text/markdown"`).
+  The shared rules are in `public/_headers`; the per-page rules are appended to
+  `dist/_headers` at build from `src/i18n/routes.ts` (see `astro.config.mjs`);
 - `/llms-full.txt` holds the whole guide and FAQ in both languages, English
   first, then French, separated by a rule.
 
