@@ -1,4 +1,5 @@
 ---
+import { guidePage } from '../../data/pages';
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../PageHeader.astro';
@@ -10,44 +11,7 @@ interface Props {
 
 const { locale } = Astro.props;
 
-const copy = {
-  fr: {
-    title: 'Guide : un tournoi de badminton en 10 étapes avec OpenShuttle',
-    description:
-      'Organisez un tournoi de badminton de club pas à pas : catégories, inscriptions CSV, format en poules et tableaux, pointage, tirage, échéancier, table de marque, écran d’appel et résultats.',
-    eyebrow: 'Guide',
-    h1: 'Un tournoi en 10 étapes',
-    lead: 'De la création du tournoi au classement final, voici comment OpenShuttle accompagne votre journée. Les étapes 1 à 3 se préparent à l’avance ; les suivantes se déroulent le jour J.',
-    tocLabel: 'Sommaire',
-    stepPrefix: 'ÉTAPE',
-    anchor: 'etape',
-    before: 'Avant le tournoi',
-    dayOf: 'Le jour J',
-    backToTop: 'Retour au sommaire',
-    ctaTitle: 'Prêt à essayer ?',
-    ctaText: 'OpenShuttle est gratuit et fonctionne sans internet, sur Windows, macOS et Linux.',
-    ctaButton: 'Télécharger OpenShuttle',
-    faqLink: 'Questions fréquentes',
-  },
-  en: {
-    title: 'Guide: a badminton tournament in 10 steps with OpenShuttle',
-    description:
-      'Run a badminton club tournament step by step: categories, CSV entries, pools and brackets, check-in, draw, schedule, control desk, display screen and results.',
-    eyebrow: 'Guide',
-    h1: 'A tournament in 10 steps',
-    lead: 'From creating the tournament to the final standings, here is how OpenShuttle helps you through the day. Steps 1 to 3 are prepared beforehand; the others happen on the day.',
-    tocLabel: 'Contents',
-    stepPrefix: 'STEP',
-    anchor: 'step',
-    before: 'Before the tournament',
-    dayOf: 'On the day',
-    backToTop: 'Back to contents',
-    ctaTitle: 'Ready to try it?',
-    ctaText: 'OpenShuttle is free and works without internet, on Windows, macOS and Linux.',
-    ctaButton: 'Download OpenShuttle',
-    faqLink: 'Frequently asked questions',
-  },
-}[locale];
+const copy = guidePage[locale];
 
 const entries = (await getCollection('guide', (entry) => entry.id.startsWith(`${locale}/`))).sort(
   (a, b) => a.data.step - b.data.step,

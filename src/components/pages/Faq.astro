@@ -1,4 +1,5 @@
 ---
+import { faqPage } from '../../data/pages';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../PageHeader.astro';
 import FaqList from '../FaqList.astro';
@@ -12,30 +13,7 @@ interface Props {
 const { locale } = Astro.props;
 const items = faq[locale];
 
-const copy = {
-  fr: {
-    title: 'FAQ : questions fréquentes sur OpenShuttle',
-    description:
-      'Connexion internet, matériel, formats, catégories, import des inscrits, avertissements Windows et macOS : les réponses aux questions fréquentes sur OpenShuttle.',
-    h1: 'Questions fréquentes',
-    lead: 'Tout ce qu’il faut savoir avant d’organiser votre tournoi avec OpenShuttle.',
-    moreTitle: 'Votre question n’y est pas ?',
-    moreText1: 'Lisez le',
-    moreGuide: 'guide en 10 étapes',
-    moreText2: 'ou posez-la sur',
-  },
-  en: {
-    title: 'FAQ: frequently asked questions about OpenShuttle',
-    description:
-      'Internet connection, equipment, formats, categories, importing entrants, Windows and macOS warnings: answers to the frequently asked questions about OpenShuttle.',
-    h1: 'Frequently asked questions',
-    lead: 'Everything you need to know before running your tournament with OpenShuttle.',
-    moreTitle: 'Your question is not here?',
-    moreText1: 'Read the',
-    moreGuide: '10-step guide',
-    moreText2: 'or ask it on',
-  },
-}[locale];
+const copy = faqPage[locale];
 ---
 
 <Base locale={locale} page="faq" title={copy.title} description={copy.description} jsonLd={[faqJsonLd(items)]}>

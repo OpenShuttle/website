@@ -1,0 +1,29 @@
+---
+import { getEntry, render } from 'astro:content';
+import Prose from '../../layouts/Prose.astro';
+import type { Locale } from '../../i18n/routes';
+
+interface Props {
+  locale: Locale;
+  /** Entry of the `pages` collection, e.g. `fr/confidentialite`. */
+  id: string;
+}
+
+const { locale, id } = Astro.props;
+const entry = await getEntry('pages', id);
+if (!entry) throw new Error(`Missing page ${id}`);
+const { Content } = await render(entry);
+const { page, title, description, heading, lead, updated } = entry.data;
+---
+
+<Prose
+  locale={locale}
+  page={page}
+  title={title}
+  description={description}
+  heading={heading}
+  lead={lead}
+  updated={updated.toISOString().slice(0, 10)}
+>
+  <Content />
+</Prose>

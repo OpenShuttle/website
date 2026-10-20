@@ -1,0 +1,19 @@
+# Markdown versions of the pages (/<page>/index.md) and llms.txt, for AI agents.
+# Each Markdown file points search engines to its HTML page as the canonical one.
+/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Link: <https://openshuttle.app/>; rel="canonical"
+
+/:path/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Link: <https://openshuttle.app/:path/>; rel="canonical"
+
+/en/:path/index.md
+  Content-Type: text/markdown; charset=utf-8
+  Link: <https://openshuttle.app/en/:path/>; rel="canonical"
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8

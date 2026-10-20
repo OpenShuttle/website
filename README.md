@@ -27,10 +27,14 @@ src/layouts/Base.astro    <head>: title, description, canonical, hreflang, Open 
 src/components/pages/     pages rendered in both languages (copy for fr and en side by side)
 src/pages/                routes; legal pages are written per language
 src/content/guide/<lang>/ the guide "a tournament in 10 steps", one Markdown file per step
-src/data/faq.ts           FAQ (home page section, FAQ page and its FAQPage JSON-LD)
+src/content/pages/<lang>/ code signing policy, privacy and legal notice, one Markdown file per page
+src/data/                 copy of the home, download, guide and FAQ pages (FAQ: also its JSON-LD)
+src/lib/markdown.ts       Markdown versions of the pages, for AI assistants
 src/assets/               app screenshots and logo, optimized to AVIF/WebP at build
 public/og/                Open Graph images (1200×630), one per language
 public/_redirects         fallback for the download links (see below)
+public/_headers           content type and canonical link of the Markdown files
+public/robots.txt         crawling rules and Content Signals
 ```
 
 Adding a page: add it to `routes` in `src/i18n/routes.ts` (both languages), then
@@ -42,6 +46,27 @@ of the download page, a progressive enhancement), self-hosted fonts
 (Fontsource), images through `astro:assets`, unique title and description per
 page and language. The guide describes only what the app does: check it
 against the app's `docs/specs/scope-v1.md` and its French and English UI labels.
+
+## AI assistants and agents
+
+The site publishes its own Markdown, built from the same sources as the HTML
+pages, without navigation or footer:
+
+- every page has a Markdown version next to it, at its path followed by
+  `index.md` (`/guide/` → `/guide/index.md`), announced in the page head by
+  `<link rel="alternate" type="text/markdown">`. `public/_headers` serves them
+  as `text/markdown; charset=utf-8` with a `Link: rel="canonical"` header to
+  the HTML page, so search engines keep the HTML version;
+- `/llms.txt` ([llmstxt.org](https://llmstxt.org)) summarises the project and
+  links to the Markdown pages in both languages;
+- `/llms-full.txt` holds the whole guide and FAQ in both languages, English
+  first, then French, separated by a rule.
+
+There is no content negotiation on the `Accept` header: it would need a Worker
+script on every request. Cloudflare's "Markdown for Agents" setting can stay
+off, since the site publishes its own Markdown. Do not enable Cloudflare's
+managed robots.txt either: `public/robots.txt` already carries the Content
+Signals (`search=yes, ai-input=yes, ai-train=yes`).
 
 ## Download links
 
