@@ -6,12 +6,17 @@ import { z } from 'astro/zod';
 // in src/content/guide/<locale>/<NN>-<slug>.md.
 const guide = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/guide' }),
-  schema: z.object({
-    step: z.number().int().min(1),
-    title: z.string(),
-    /** Short summary shown in the table of contents. */
-    summary: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      step: z.number().int().min(1),
+      title: z.string(),
+      /** Short summary shown in the table of contents. */
+      summary: z.string(),
+      /** Screenshots shown in a row under the step, enlarged on click. */
+      images: z
+        .array(z.object({ src: image(), alt: z.string(), caption: z.string() }))
+        .default([]),
+    }),
 });
 
 // Policy and legal pages, one Markdown file per page and language:

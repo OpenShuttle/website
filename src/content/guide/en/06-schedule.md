@@ -2,6 +2,10 @@
 step: 6
 title: Set up the schedule
 summary: Order the rounds in a list, validate, then move single matches.
+images:
+  - src: ../../../assets/shot-schedule.png
+    alt: "The schedule: the order of the rounds on the left, the court-by-court forecast on the right"
+    caption: "The round order and the forecast per court"
 ---
 
 The **Schedule** forecasts every match left, court by court, with its estimated time, from the time on court of each win condition. It also sets the order of the calls.

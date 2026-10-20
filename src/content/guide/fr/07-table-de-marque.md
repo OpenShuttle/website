@@ -2,6 +2,10 @@
 step: 7
 title: Faire jouer depuis la table de marque
 summary: Appeler, terminer, saisir les scores, gérer les scores en attente et les forfaits.
+images:
+  - src: ../../../assets/shot-desk.png
+    alt: "La table de marque : sept terrains, matchs en cours, scores en attente et prochains matchs"
+    caption: "Les terrains, les scores en attente et la file"
 ---
 
 La **Table de marque** est l'écran où vous passerez l'essentiel de la journée. Chaque terrain a sa carte, dans l'un de trois états :

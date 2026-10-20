@@ -2,6 +2,10 @@
 step: 8
 title: Afficher l'écran d'appel sur un deuxième écran
 summary: Un vidéoprojecteur ou une télé, lisible à dix mètres, sans rien toucher.
+images:
+  - src: ../../../assets/shot-display.png
+    alt: "L’écran d’appel : un match appelé sur le terrain 7, les terrains en cours et le classement d’une poule"
+    caption: "Le match appelé, les terrains et un classement"
 ---
 
 Branchez un vidéoprojecteur ou une télé en HDMI sur l'ordinateur de la table de marque. Dans la barre du haut, le bouton de l'écran d'appel ouvre une deuxième fenêtre et permet de choisir le moniteur ; passez-la en plein écran depuis son propre bouton ou d'un double-clic.

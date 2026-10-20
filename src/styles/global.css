@@ -36,6 +36,14 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  /* Anchors land below the sticky header. */
+  scroll-padding-top: 88px;
+}
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 128px;
+  }
 }
 
 body {

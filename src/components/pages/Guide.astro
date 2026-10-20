@@ -3,6 +3,8 @@ import { guidePage } from '../../data/pages';
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../PageHeader.astro';
+import Lightbox from '../Lightbox.astro';
+import ZoomableShot from '../ZoomableShot.astro';
 import { routes, type Locale } from '../../i18n/routes';
 
 interface Props {
@@ -29,7 +31,24 @@ const groups = [
 <Base locale={locale} page="guide" title={copy.title} description={copy.description}>
   <PageHeader eyebrow={copy.eyebrow} title={copy.h1} lead={copy.lead} />
 
-  <div class="container-narrow guide">
+  <div class="container guide-layout">
+    <nav class="side-toc" aria-label={copy.tocLabel}>
+      <span class="side-toc-title">{copy.tocLabel}</span>
+      <ol>
+        {
+          steps.map((s) => (
+            <li>
+              <a href={`#${copy.anchor}-${s.step}`} data-step={s.step}>
+                <span class="side-num">{pad(s.step)}</span>
+                <span>{s.title}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+  <div class="guide">
     <nav class="toc" id="toc" aria-labelledby="toc-title">
       <h2 id="toc-title" class="toc-title">{copy.tocLabel}</h2>
       {
@@ -55,7 +74,7 @@ const groups = [
     </nav>
 
     {
-      steps.map(({ step, title, Content }) => (
+      steps.map(({ step, title, images, Content }) => (
         <section class="step" id={`${copy.anchor}-${step}`} aria-labelledby={`${copy.anchor}-${step}-title`}>
           <span class="step-label">
             {copy.stepPrefix} {pad(step)} / 10
@@ -66,6 +85,25 @@ const groups = [
           <div class="prose">
             <Content />
           </div>
+          {images.length > 0 && (
+            <ul class="shots" role="list">
+              {images.map((img) => (
+                <li>
+                  <figure>
+                    <ZoomableShot
+                      locale={locale}
+                      src={img.src}
+                      alt={img.alt}
+                      class="thumb"
+                      widths={[320, 480, 640]}
+                      sizes="(min-width: 640px) 240px, 72vw"
+                    />
+                    <figcaption>{img.caption}</figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          )}
           <a class="back" href="#toc">
             ↑ {copy.backToTop}
           </a>
@@ -82,15 +120,170 @@ const groups = [
       </div>
     </aside>
   </div>
+  </div>
+  <Lightbox locale={locale} />
 </Base>
 
+<script is:inline>
+  // Highlights the step being read in the side table of contents.
+  (() => {
+    const links = new Map(
+      Array.from(document.querySelectorAll('.side-toc a')).map((a) => [a.getAttribute('href').slice(1), a]),
+    );
+    if (!links.size || !('IntersectionObserver' in window)) return;
+    const visible = new Set();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => (e.isIntersecting ? visible.add(e.target.id) : visible.delete(e.target.id)));
+        const current = Array.from(links.keys()).find((id) => visible.has(id));
+        if (!current) return;
+        links.forEach((a, id) => (id === current ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current')));
+      },
+      { rootMargin: '-90px 0px -55% 0px' },
+    );
+    links.forEach((_, id) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+  })();
+</script>
+
 <style>
-  .guide {
+  .guide-layout {
     padding-top: 56px;
     padding-bottom: 88px;
+  }
+
+  .guide {
+    max-width: 912px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 56px;
+  }
+
+  .side-toc {
+    display: none;
+  }
+
+  /* Desktop: the table of contents moves to a sticky column on the left. */
+  @media (min-width: 1100px) {
+    .guide-layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 780px);
+      justify-content: center;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .guide {
+      margin: 0;
+    }
+
+    .side-toc {
+      display: block;
+      position: sticky;
+      top: 96px;
+    }
+
+    .toc,
+    .back {
+      display: none;
+    }
+  }
+
+  .side-toc-title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .side-toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid var(--color-border);
+  }
+
+  .side-toc a {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    min-height: 36px;
+    padding: 6px 12px;
+    margin-left: -2px;
+    border-left: 2px solid transparent;
+    font-size: 15px;
+    line-height: 1.3;
+    color: var(--color-text-body);
+    text-decoration: none;
+  }
+
+  .side-toc a:hover {
+    color: var(--color-primary);
+  }
+
+  .side-toc a[aria-current='true'] {
+    border-left-color: var(--color-primary);
+    color: var(--color-text);
+    font-weight: 700;
+  }
+
+  .side-num {
+    font: 700 13px var(--font-mono);
+    color: var(--color-muted);
+  }
+
+  /* Screenshots of a step: one row, scrolling sideways when they do not fit. */
+  .shots {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 4px 4px 12px;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+  }
+
+  .shots li {
+    flex: 0 0 min(240px, 72vw);
+    scroll-snap-align: start;
+  }
+
+  .shots figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .shots figcaption {
+    font-size: 14px;
+    color: var(--color-muted);
+  }
+
+  .shots :global(.thumb) {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-strong);
+    box-shadow: 0 4px 14px rgb(22 24 29 / 0.1);
+  }
+
+  .shots :global(.zoom-hint) {
+    right: 8px;
+    bottom: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .shots :global(.zoomable) {
+    border-radius: 8px;
   }
 
   .toc {
@@ -167,7 +360,6 @@ const groups = [
     display: flex;
     flex-direction: column;
     gap: 10px;
-    scroll-margin-top: 16px;
   }
 
   .step-title {

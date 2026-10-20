@@ -35,8 +35,39 @@ const current = (key: RouteKey) => (page === key ? 'page' : undefined);
   </nav>
 </header>
 
+<script is:inline>
+  // Phones: fold the links row while scrolling down, unfold when scrolling up.
+  (() => {
+    const header = document.querySelector('.site-header');
+    const phone = matchMedia('(max-width: 720px)');
+    let last = scrollY;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const y = scrollY;
+      if (!phone.matches || y < 80) header.classList.remove('folded');
+      else if (y > last + 4) header.classList.add('folded');
+      else if (y < last - 4) header.classList.remove('folded');
+      last = y;
+    };
+    addEventListener('scroll', () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+  })();
+</script>
+
 <style>
+  /* Sticky on every screen. On phones the links wrap to a second row, which
+     folds away while scrolling down (the script below) and comes back when
+     scrolling up. The header keeps its height in the layout, so nothing
+     jumps: once folded, its lower part is transparent and lets clicks through. */
   .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
     border-bottom: 1px solid var(--color-border);
     background: #ffffff;
   }
@@ -114,8 +145,51 @@ const current = (key: RouteKey) => (page === key ? 'page' : undefined);
   }
 
   @media (max-width: 720px) {
+    .site-header {
+      transition: background-color 0.15s, border-color 0.15s;
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 68px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--color-border);
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
     .nav {
+      position: relative;
       gap: 0 12px;
+    }
+
+    .nav-links {
+      transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+    }
+
+    .site-header.folded:not(:focus-within) {
+      background: transparent;
+      border-bottom-color: transparent;
+      pointer-events: none;
+    }
+
+    .site-header.folded:not(:focus-within)::before {
+      opacity: 1;
+      box-shadow: 0 2px 8px rgb(22 24 29 / 0.08);
+    }
+
+    .site-header.folded:not(:focus-within) .brand,
+    .site-header.folded:not(:focus-within) .lang,
+    .site-header.folded:not(:focus-within) .btn {
+      pointer-events: auto;
+    }
+
+    .site-header.folded:not(:focus-within) .nav-links {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
     }
 
     .brand {
