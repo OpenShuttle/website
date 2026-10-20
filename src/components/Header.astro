@@ -28,7 +28,9 @@ const current = (key: RouteKey) => (page === key ? 'page' : undefined);
       <a href={routes.faq[locale]} aria-current={current('faq')}>{t.faq}</a>
       <a href={github.repo}>{t.github}</a>
     </div>
-    <a class="lang" href={otherHref} hreflang={other} lang={other} aria-label={t.otherLangLabel}>{t.otherLang}</a>
+    <a class="lang" href={otherHref} hreflang={other} lang={other}>
+      {t.otherLang}<span class="sr-only"> – {t.otherLangLabel}</span>
+    </a>
     <a class="btn btn-primary btn-sm" href={routes.download[locale]} aria-current={current('download')}>{t.download}</a>
   </nav>
 </header>

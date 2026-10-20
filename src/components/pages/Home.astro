@@ -39,6 +39,12 @@ const softwareApplication = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
 };
 
+// Rendered width of the screenshots, from the flex layout below: full width
+// (minus the 2 × 24 px gutters) until text and image sit side by side, then
+// the image's share of the row, fixed once the container reaches 1200 px.
+const heroSizes = '(min-width: 1200px) 644px, (min-width: 1056px) 54vw, calc(100vw - 48px)';
+const splitSizes = '(min-width: 1200px) 672px, (min-width: 1016px) 56vw, calc(100vw - 48px)';
+
 const homeFaq = faq[locale].filter((item) => item.home);
 ---
 
@@ -66,8 +72,8 @@ const homeFaq = faq[locale].filter((item) => item.home);
           alt={copy.deskAlt}
           class="shot"
           formats={['avif', 'webp']}
-          widths={[640, 960, 1280]}
-          sizes="(min-width: 1200px) 640px, (min-width: 1040px) 55vw, 100vw"
+          widths={[480, 640, 800, 1280]}
+          sizes={heroSizes}
           loading="eager"
           fetchpriority="high"
         />
@@ -118,7 +124,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
 
   <section class="container split" aria-labelledby="schedule-title">
     <div class="split-media">
-      <Picture src={shotSchedule} alt={copy.scheduleAlt} class="shot shot-soft" sizes="(min-width: 1200px) 640px, (min-width: 1040px) 55vw, 100vw" formats={['avif', 'webp']} widths={[640, 960, 1280]} loading="lazy" />
+      <Picture src={shotSchedule} alt={copy.scheduleAlt} class="shot shot-soft" sizes={splitSizes} formats={['avif', 'webp']} widths={[480, 640, 800, 1280]} loading="lazy" />
     </div>
     <div class="split-text stack">
       <span class="eyebrow">{copy.scheduleEyebrow}</span>
@@ -145,7 +151,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
         <p class="body-lg on-dark-text">{copy.displayText}</p>
       </div>
       <div class="split-media">
-        <Picture src={shotDisplay} alt={copy.displayAlt} class="shot shot-dark" sizes="(min-width: 1200px) 640px, (min-width: 1040px) 55vw, 100vw" formats={['avif', 'webp']} widths={[640, 960, 1440]} loading="lazy" />
+        <Picture src={shotDisplay} alt={copy.displayAlt} class="shot shot-dark" sizes={splitSizes} formats={['avif', 'webp']} widths={[480, 640, 800, 1440]} loading="lazy" />
       </div>
     </div>
   </section>

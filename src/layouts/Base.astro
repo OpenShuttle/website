@@ -4,6 +4,7 @@ import '@fontsource/atkinson-hyperlegible-next/700.css';
 import '@fontsource/atkinson-hyperlegible-next/800.css';
 import '@fontsource/atkinson-hyperlegible-mono/700.css';
 import font400 from '@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-400-normal.woff2?url';
+import font700 from '@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-700-normal.woff2?url';
 import font800 from '@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-800-normal.woff2?url';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
@@ -51,6 +52,7 @@ const ogAlt =
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#076167" />
     <link rel="preload" href={font400} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={font700} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={font800} as="font" type="font/woff2" crossorigin />
 
     <meta property="og:type" content="website" />

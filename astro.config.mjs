@@ -11,7 +11,8 @@ export default defineConfig({
   trailingSlash: 'always',
   // Keep line breaks between text and links in the page sources as spaces.
   compressHTML: false,
-  build: { format: 'directory' },
+  // The stylesheet is small (~3 KB gzipped): inline it so it never blocks rendering.
+  build: { format: 'directory', inlineStylesheets: 'always' },
   integrations: [
     {
       // Each HTML page announces its Markdown version in a Link header too,
