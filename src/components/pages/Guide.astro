@@ -269,12 +269,12 @@ const groups = [
     color: var(--color-muted);
   }
 
-  /* Same box for every thumbnail, whatever the screenshot's shape. */
+  /* Same 16:9 box for every thumbnail, whatever the screenshot's shape. */
   .shots :global(.thumb) {
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9;
     object-fit: contain;
     background: var(--color-bg-soft);
     border-radius: 8px;

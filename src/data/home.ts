@@ -53,7 +53,7 @@ export const home = {
         ],
       },
     ],
-    scheduleAlt: 'L’échéancier : l’ordre des tours à gauche, la prévision terrain par terrain à droite',
+    scheduleAlt: 'L’échéancier : l’ordre des tours à gauche, la frise terrain par terrain au milieu et les matchs restants par équipe à droite',
     scheduleEyebrow: 'Échéancier',
     scheduleH2: 'Sachez à quelle heure tout le monde joue.',
     scheduleText:
@@ -144,7 +144,7 @@ export const home = {
         ],
       },
     ],
-    scheduleAlt: 'The schedule: the order of the rounds on the left, the court-by-court forecast on the right',
+    scheduleAlt: 'The schedule: the order of the rounds on the left, the court-by-court timeline in the middle and the matches left per team on the right',
     scheduleEyebrow: 'Schedule',
     scheduleH2: 'Know when everyone plays.',
     scheduleText:

@@ -7,9 +7,9 @@ import ZoomableShot from '../ZoomableShot.astro';
 import FaqList from '../FaqList.astro';
 import { faq } from '../../data/faq';
 import { author, github, routes, type Locale } from '../../i18n/routes';
-import shotDeskFr from '../../assets/shot-desk.png';
-import shotScheduleFr from '../../assets/shot-schedule.png';
-import shotDisplayFr from '../../assets/shot-display.png';
+import shotDeskFr from '../../assets/guide/07-desk-fr.png';
+import shotScheduleFr from '../../assets/guide/06-schedule-fr.png';
+import shotDisplayFr from '../../assets/guide/08-display-fr.png';
 import shotDeskEn from '../../assets/guide/07-desk-en.png';
 import shotScheduleEn from '../../assets/guide/06-schedule-en.png';
 import shotDisplayEn from '../../assets/guide/08-display-en.png';
@@ -50,6 +50,8 @@ const softwareApplication = {
 // (minus the 2 × 24 px gutters) until text and image sit side by side, then
 // the image's share of the row, fixed once the container reaches 1200 px.
 const heroSizes = '(min-width: 1200px) 644px, (min-width: 1056px) 54vw, calc(100vw - 48px)';
+// 1920×1080 screenshots: up to 1440 px covers the ~670 px column on 2× screens.
+const shotWidths = [480, 640, 960, 1440];
 const splitSizes = '(min-width: 1200px) 672px, (min-width: 1016px) 56vw, calc(100vw - 48px)';
 
 const homeFaq = faq[locale].filter((item) => item.home);
@@ -74,7 +76,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
         </span>
       </div>
       <div class="hero-media">
-        <ZoomableShot locale={locale} src={shotDesk} alt={copy.deskAlt} widths={[480, 640, 800, 1280]} sizes={heroSizes} eager />
+        <ZoomableShot locale={locale} src={shotDesk} alt={copy.deskAlt} widths={shotWidths} sizes={heroSizes} eager />
       </div>
     </div>
   </section>
@@ -122,7 +124,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
 
   <section class="container split" aria-labelledby="schedule-title">
     <div class="split-media">
-      <ZoomableShot locale={locale} src={shotSchedule} alt={copy.scheduleAlt} class="shot shot-soft" widths={[480, 640, 800, 1280]} sizes={splitSizes} />
+      <ZoomableShot locale={locale} src={shotSchedule} alt={copy.scheduleAlt} class="shot shot-soft" widths={shotWidths} sizes={splitSizes} />
     </div>
     <div class="split-text stack">
       <span class="eyebrow">{copy.scheduleEyebrow}</span>
@@ -149,7 +151,7 @@ const homeFaq = faq[locale].filter((item) => item.home);
         <p class="body-lg on-dark-text">{copy.displayText}</p>
       </div>
       <div class="split-media">
-        <ZoomableShot locale={locale} src={shotDisplay} alt={copy.displayAlt} class="shot shot-dark" widths={[480, 640, 800, 1440]} sizes={splitSizes} />
+        <ZoomableShot locale={locale} src={shotDisplay} alt={copy.displayAlt} class="shot shot-dark" widths={shotWidths} sizes={splitSizes} />
       </div>
     </div>
   </section>
