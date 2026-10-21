@@ -12,6 +12,7 @@ export const routes = {
   signing: { fr: '/politique-de-signature/', en: '/en/code-signing-policy/' },
   privacy: { fr: '/confidentialite/', en: '/en/privacy/' },
   legal: { fr: '/mentions-legales/', en: '/en/legal-notice/' },
+  changelog: { fr: '/nouveautes/', en: '/en/changelog/' },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type RouteKey = keyof typeof routes;

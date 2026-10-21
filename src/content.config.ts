@@ -19,12 +19,12 @@ const guide = defineCollection({
     }),
 });
 
-// Policy and legal pages, one Markdown file per page and language:
+// Changelog, policy and legal pages, one Markdown file per page and language:
 // src/content/pages/<locale>/<slug>.md, the slug being the page's URL slug.
 const pages = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/pages' }),
   schema: z.object({
-    page: z.enum(['signing', 'privacy', 'legal']),
+    page: z.enum(['signing', 'privacy', 'legal', 'changelog']),
     title: z.string(),
     description: z.string(),
     heading: z.string(),

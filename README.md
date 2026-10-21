@@ -27,7 +27,7 @@ src/layouts/Base.astro    <head>: title, description, canonical, hreflang, Open 
 src/components/pages/     pages rendered in both languages (copy for fr and en side by side)
 src/pages/                routes; legal pages are written per language
 src/content/guide/<lang>/ the guide "a tournament in 10 steps", one Markdown file per step
-src/content/pages/<lang>/ code signing policy, privacy and legal notice, one Markdown file per page
+src/content/pages/<lang>/ changelog, code signing policy, privacy and legal notice, one Markdown file per page
 src/data/                 copy of the home, download, guide and FAQ pages (FAQ: also its JSON-LD)
 src/lib/markdown.ts       Markdown versions of the pages, for AI assistants
 src/assets/               app screenshots and logo, optimized to AVIF/WebP at build
@@ -72,6 +72,21 @@ script on every request. Cloudflare's "Markdown for Agents" setting can stay
 off, since the site publishes its own Markdown. Do not enable Cloudflare's
 managed robots.txt either: `public/robots.txt` already carries the Content
 Signals (`search=yes, ai-input=yes, ai-train=yes`).
+
+## New app version
+
+When a desktop version is released, update the site in the same pass:
+
+1. Add the version at the top of `src/content/pages/fr/nouveautes.md` and
+   `src/content/pages/en/changelog.md`: user-facing wording, a link to the
+   GitHub release, and the `updated` date.
+2. If screens changed, replace the screenshots in `src/assets/guide/` (same
+   names, 1920×1080, French and English UI, fictional demo data, no file path
+   visible) and check the alt texts and captions in the guide's front matter.
+3. Update the guide, FAQ and home page copy for new or changed behaviour.
+
+Download links need no change: the app's release workflow points them to the
+new files.
 
 ## Download links
 

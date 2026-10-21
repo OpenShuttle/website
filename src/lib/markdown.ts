@@ -180,7 +180,7 @@ export async function guideMarkdown(locale: Locale, level = '##') {
     .join('\n\n');
 }
 
-async function textPageMarkdown(locale: Locale, key: 'signing' | 'privacy' | 'legal') {
+async function textPageMarkdown(locale: Locale, key: 'signing' | 'privacy' | 'legal' | 'changelog') {
   const slug = routes[key][locale].split('/').filter(Boolean).pop();
   const entry = await getEntry('pages', `${locale}/${slug}`);
   if (!entry) throw new Error(`Missing page ${locale}/${slug}`);

@@ -29,7 +29,7 @@ export const home = {
         label: '01 · AVANT',
         title: 'Préparer',
         items: [
-          'Inscriptions par paire, import et export CSV',
+          'Inscriptions par paire, import CSV (HelloAsso, tableur) et export',
           'Format libre : poules, tableaux, consolante, classement complet',
           'Presets réutilisables d’un tournoi à l’autre',
         ],
@@ -120,7 +120,7 @@ export const home = {
         label: '01 · BEFORE',
         title: 'Prepare',
         items: [
-          'Entries by pair, CSV import and export',
+          'Entries by pair, CSV import (HelloAsso, spreadsheet) and export',
           'Free format: pools, brackets, consolation, full standings',
           'Presets reused from one tournament to the next',
         ],

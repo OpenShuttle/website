@@ -62,7 +62,7 @@ export const faq: Record<Locale, FaqItem[]> = {
     {
       question: 'Comment importer la liste des inscrits ?',
       answer:
-        '<p>Depuis un fichier CSV avec les colonnes catégorie, joueur 1, club 1, joueur 2, club 2 (séparateur point-virgule ou virgule). Les lignes invalides ou déjà inscrites sont signalées, et l’import s’annule d’un seul clic.</p>',
+        '<p>Depuis n’importe quel fichier CSV : un export HelloAsso, un tableur ou un export d’OpenShuttle. OpenShuttle devine le rôle de chaque colonne (catégorie, noms, clubs) et vous laisse corriger, avec un aperçu des inscriptions avant d’importer. Les lignes déjà inscrites sont signalées, et l’import s’annule d’un seul clic.</p>',
     },
     {
       question: 'Où sont enregistrés mes tournois ?',
@@ -136,7 +136,7 @@ export const faq: Record<Locale, FaqItem[]> = {
     {
       question: 'How do I import the list of entrants?',
       answer:
-        '<p>From a CSV file with the columns category, player 1, club 1, player 2, club 2 (semicolon or comma separated). Invalid or already entered rows are reported, and the whole import can be undone in one click.</p>',
+        '<p>From any CSV file: a HelloAsso export, a spreadsheet or an OpenShuttle export. OpenShuttle guesses what each column holds (category, names, clubs) and lets you correct it, with a preview of the entrants before importing. Rows already entered are reported, and the whole import can be undone in one click.</p>',
     },
     {
       question: 'Where are my tournaments saved?',
