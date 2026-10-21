@@ -111,12 +111,16 @@ One-time setup, in Cloudflare **Workers & Pages → Create → Import a reposito
 | Production branch | `main` |
 | Build command | `npm run build` |
 | Deploy command | `npx wrangler deploy` |
-| Non-production branch deploy command | `npx wrangler versions upload` (default, for preview builds) |
+| Non-production branch deploy command | `npx wrangler preview` (default; needs the `previews` block of `wrangler.jsonc`) |
 | Build variable | `NODE_VERSION` = the version in `.nvmrc` (`24`), if the build image does not pick up `.nvmrc` |
 
 Then, on the Worker, **Settings → Domains & Routes → Add → Custom domain**:
-`openshuttle.app` (the zone is on the same Cloudflare account; HTTPS is
-required for `.app` and is automatic). Optionally add `www.openshuttle.app` and
+`openshuttle.app`, enabled for **Production and Preview**, so that a branch is
+previewed at `<branch>.openshuttle.app`. The `workers.dev` URLs (production
+and previews) are turned off in `wrangler.jsonc` (`workers_dev`,
+`preview_urls`): toggles in the dashboard are overwritten by each deploy.
+The zone is on the same Cloudflare account; HTTPS is required for `.app` and
+is automatic. Optionally add `www.openshuttle.app` and
 redirect it to the apex with a redirect rule.
 
 Analytics: Cloudflare Web Analytics (no cookies) can be turned on for the
