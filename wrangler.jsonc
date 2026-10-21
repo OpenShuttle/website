@@ -10,5 +10,8 @@
     "not_found_handling": "404-page",
     // Directory format (/guide/ → dist/guide/index.html), like the canonical URLs.
     "html_handling": "force-trailing-slash"
-  }
+  },
+  // Branches and pull requests (Renovate's included) get a Preview deployment
+  // from Cloudflare's build (`npx wrangler preview`); the block may stay empty.
+  "previews": {}
 }

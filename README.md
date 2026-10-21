@@ -111,7 +111,7 @@ One-time setup, in Cloudflare **Workers & Pages → Create → Import a reposito
 | Production branch | `main` |
 | Build command | `npm run build` |
 | Deploy command | `npx wrangler deploy` |
-| Non-production branch deploy command | `npx wrangler versions upload` (default, for preview builds) |
+| Non-production branch deploy command | `npx wrangler preview` (default; needs the `previews` block of `wrangler.jsonc`) |
 | Build variable | `NODE_VERSION` = the version in `.nvmrc` (`24`), if the build image does not pick up `.nvmrc` |
 
 Then, on the Worker, **Settings → Domains & Routes → Add → Custom domain**:
