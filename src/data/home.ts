@@ -39,7 +39,7 @@ export const home = {
         title: 'Faire jouer',
         items: [
           'Pointage en un clic, dossards attribués à l’arrivée',
-          'Tirage avec têtes de série, clubs séparés dans les poules',
+          'Tirage par classement, clubs séparés et repérés par couleur',
           'Échéancier, appels, scores, temps de repos',
         ],
       },
@@ -130,7 +130,7 @@ export const home = {
         title: 'Play',
         items: [
           'One-click check-in, bib numbers handed out on arrival',
-          'Draw with seeds, club mates kept apart in pools',
+          'Ranked draw, club mates kept apart and color-coded',
           'Schedule, match calls, scores, rest times',
         ],
       },

@@ -7,6 +7,15 @@ lead: "What changes in each version of the app, from the latest to the oldest. T
 updated: 2026-11-04
 ---
 
+## Version 1.3.0 · November 4, 2026
+
+- **New:** at the draw, each club has its color. A club alone in its pool stays pale; two teams of the same club in a pool stand out, with "×2".
+- **New:** one color per ranking level. With 5 pools, the first 5 teams make level 1, the next 5 level 2…: you see at a glance whether each pool has one team of each level.
+- **Improved:** "seeds" become the "ranking": rank a few teams or all of them.
+- **Improved:** a pool stays in ranking order, even when you move a team into it by hand.
+
+[Technical details of version 1.3.0 on GitHub](https://github.com/OpenShuttle/openshuttle-app/releases/tag/desktop-v1.3.0)
+
 ## Version 1.2.0 · November 4, 2026
 
 - **New:** in doubles, a player can register alone and wait for a partner. On the day, pair them with another player on their own or add a partner on the spot; a pair can also be split as long as it has not played.

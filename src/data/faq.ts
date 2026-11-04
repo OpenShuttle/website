@@ -62,7 +62,7 @@ export const faq: Record<Locale, FaqItem[]> = {
     {
       question: 'OpenShuttle gère-t-il les classements des joueurs (P10, NC…) ?',
       answer:
-        '<p>Non, il n’y a pas de niveau ni de classement fédéral. Pour équilibrer les poules, vous désignez vos têtes de série et les rangez dans l’ordre au moment du tirage.</p>',
+        '<p>Non, il n’y a pas de classement fédéral. Pour équilibrer les poules, vous classez vous-même les équipes au moment du tirage : elles sont réparties en serpentin, et chaque niveau (avec 5 poules, les 5 premières, puis les 5 suivantes…) a sa couleur pour vérifier la répartition.</p>',
     },
     {
       question: 'Comment importer la liste des inscrits ?',
@@ -146,7 +146,7 @@ export const faq: Record<Locale, FaqItem[]> = {
     {
       question: 'Does OpenShuttle handle player rankings or levels?',
       answer:
-        '<p>No, there are no levels or federation rankings. To balance the pools, you pick your seeds and put them in order at the draw.</p>',
+        '<p>No, there are no federation rankings. To balance the pools, you rank the teams yourself at the draw: they are spread in a snake, and each level (with 5 pools, the first 5, then the next 5…) has its color so you can check the spread.</p>',
     },
     {
       question: 'How do I import the list of entrants?',

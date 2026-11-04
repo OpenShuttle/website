@@ -7,6 +7,15 @@ lead: "Ce qui change à chaque version de l’application, de la plus récente �
 updated: 2026-11-04
 ---
 
+## Version 1.3.0 · 4 novembre 2026
+
+- **Nouveau :** au tirage, chaque club a sa couleur. Un club seul dans sa poule reste pâle ; deux équipes du même club dans une poule ressortent, avec « ×2 ».
+- **Nouveau :** une couleur par niveau de classement. Avec 5 poules, les 5 premières équipes forment le niveau 1, les 5 suivantes le niveau 2… : vous voyez d’un coup d’œil si chaque poule a bien une équipe de chaque niveau.
+- **Amélioré :** les « têtes de série » deviennent le « classement » : classez quelques équipes ou toutes.
+- **Amélioré :** une poule reste rangée dans l’ordre du classement, même quand vous y déplacez une équipe à la main.
+
+[Détails techniques de la version 1.3.0 sur GitHub](https://github.com/OpenShuttle/openshuttle-app/releases/tag/desktop-v1.3.0)
+
 ## Version 1.2.0 · 4 novembre 2026
 
 - **Nouveau :** en double, un joueur peut s’inscrire seul et attendre un partenaire. Le jour J, formez la paire avec un autre joueur seul ou ajoutez un partenaire sur place ; une paire peut aussi être séparée tant qu’elle n’a pas joué.
