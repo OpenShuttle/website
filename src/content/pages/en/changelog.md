@@ -13,6 +13,7 @@ updated: 2026-11-04
 - **New:** the format of a later stage can change during the tournament, as long as none of its matches has started. After forfeits or when running late, play the final bracket in one set, turn it into pools, add or remove a stage.
 - **New:** a trash on the home screen. A tournament you no longer need leaves the list; restore it or delete it later.
 - **New:** the format preview counts, as you choose, the complete pairs, every entry or the present ones.
+- **Improved:** at check-in, teams already checked in move to the bottom of the list; the ones still expected stay on top.
 - **Improved:** each file dialog (import, export, open, archive) opens in the folder you used last.
 - **Improved:** a team that already has matches can no longer be removed or split by mistake: the Entrants screen points you to a forfeit.
 
