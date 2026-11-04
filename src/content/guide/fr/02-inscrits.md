@@ -16,6 +16,8 @@ images:
 
 Dans **Inscrits**, ajoutez les participants de chaque catégorie : un joueur en simple, une paire en double. Chaque joueur a un nom (prénom et nom) et un club, choisi dans la liste des clubs ou ajouté au passage.
 
+Un club est reconnu par son nom comme par son acronyme (« Rillieux » ou « AUVR »), sans tenir compte des majuscules, des accents, des espaces ni de la ponctuation : c'est toujours le nom de la liste qui est enregistré. La liste des clubs et leurs acronymes facultatifs se gèrent dans l'écran **Presets**, et les **Paramètres** affichent les clubs par nom ou par acronyme (le nom quand il n'y a pas d'acronyme).
+
 En double, un joueur sans partenaire s'inscrit seul : cochez **Inscrit seul, attend un partenaire**. Il apparaît « Attend un partenaire » et n'entre pas dans le tirage tant qu'il est seul. Avec **Partenaire…**, formez la paire avec un autre joueur seul de la catégorie (**Former la paire**) ou ajoutez un partenaire qui n'était pas inscrit. À l'inverse, **Séparer la paire** remet les deux joueurs en attente d'un partenaire.
 
 Vous avez déjà la liste ailleurs ? **Importer…** accepte n'importe quel fichier CSV : un export d'OpenShuttle, un export HelloAsso ou un tableur enregistré en CSV (séparateur point-virgule, virgule ou tabulation, encodage UTF-8 ou celui d'Excel sous Windows).
@@ -24,7 +26,8 @@ OpenShuttle devine ce que contient chaque colonne d'après la ligne d'en-tête, 
 
 - **la catégorie** : la colonne qui la donne, puis, pour chaque valeur trouvée dans cette colonne, la catégorie où vont ses lignes. Les codes (DH, DD…) et les noms (« Double hommes »…) sont reconnus. Une valeur qui n'est pas une inscription, comme un repas, se règle sur **Ignorer ces lignes**. Les lignes sans catégorie vont dans la catégorie de votre choix ;
 - **chaque joueur** : soit une colonne avec le nom complet, soit une colonne pour le prénom et une pour le nom, et la colonne du club. Le partenaire peut reprendre le club du joueur 1 ;
-- **les paires** : cochez **Paires : un second joueur sur chaque ligne** quand le fichier donne les deux joueurs sur la même ligne.
+- **les paires** : cochez **Paires : un second joueur sur chaque ligne** quand le fichier donne les deux joueurs sur la même ligne ;
+- **les clubs absents de la liste** : les clubs du fichier sont reconnus par leur nom ou leur acronyme. Ceux qui ne correspondent à aucun club de la liste sont listés : pour chacun, **Ajouter à la liste** (le choix par défaut, avec son nom et son acronyme), le rattacher à un club existant avec **Même club que**, ou **Garder tel quel**.
 
 En dessous, l'aperçu se met à jour en direct : les inscriptions à importer, les lignes non importées avec leur raison (déjà inscrite, catégorie non jouée…) et les lignes ignorées. Rien n'est enregistré avant de cliquer sur **Importer N inscriptions**. Une paire inscrite par chacun de ses deux joueurs n'est enregistrée qu'une fois, et une ligne avec un seul joueur l'inscrit seul, en attente d'un partenaire. Tout l'import s'annule d'un seul **Annuler**.
 

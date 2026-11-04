@@ -67,7 +67,7 @@ export const faq: Record<Locale, FaqItem[]> = {
     {
       question: 'Comment importer la liste des inscrits ?',
       answer:
-        '<p>Depuis n’importe quel fichier CSV : un export HelloAsso, un tableur ou un export d’OpenShuttle. OpenShuttle devine le rôle de chaque colonne (catégorie, noms, clubs) et vous laisse corriger, avec un aperçu des inscriptions avant d’importer. Les lignes déjà inscrites sont signalées, et l’import s’annule d’un seul clic.</p>',
+        '<p>Depuis n’importe quel fichier CSV : un export HelloAsso, un tableur ou un export d’OpenShuttle. OpenShuttle devine le rôle de chaque colonne (catégorie, noms, clubs), reconnaît les clubs par leur nom ou leur acronyme, propose d’ajouter ceux qu’il ne connaît pas et vous laisse corriger, avec un aperçu des inscriptions avant d’importer. Les lignes déjà inscrites sont signalées, et l’import s’annule d’un seul clic.</p>',
     },
     {
       question: 'Un joueur s’inscrit sans partenaire, comment faire ?',
@@ -151,7 +151,7 @@ export const faq: Record<Locale, FaqItem[]> = {
     {
       question: 'How do I import the list of entrants?',
       answer:
-        '<p>From any CSV file: a HelloAsso export, a spreadsheet or an OpenShuttle export. OpenShuttle guesses what each column holds (category, names, clubs) and lets you correct it, with a preview of the entrants before importing. Rows already entered are reported, and the whole import can be undone in one click.</p>',
+        '<p>From any CSV file: a HelloAsso export, a spreadsheet or an OpenShuttle export. OpenShuttle guesses what each column holds (category, names, clubs), recognises clubs by their name or acronym, offers to add the ones it does not know and lets you correct it, with a preview of the entrants before importing. Rows already entered are reported, and the whole import can be undone in one click.</p>',
     },
     {
       question: 'A player registers without a partner. What do I do?',

@@ -11,7 +11,7 @@ images:
 In **Draw**, each category has its own section. Only present entrants (all their players checked in) are drawn.
 
 1. **Rank the teams**: add them to the **Ranking** with **Rank**, then put them in order by drag and drop or with the arrows. OpenShuttle has no federation ranking: you decide who the favourites are. Rank a few teams or all of them.
-2. Click **Draw the pools**. Ranked teams are placed in a snake (A, B, C, C, B, A…), the others at random, each into the pool where their club has the fewest players. If you rank every team, the snake alone decides: check the clubs.
+2. Click **Draw the pools**. Ranked teams are placed in a snake (A, B, C, C, B, A…), the others at random, each into the pool where their club has the fewest players. A club and its acronym count as one club, older files included. If you rank every team, the snake alone decides: check the clubs.
 3. **Check**:
    - each ranked team shows its rank (R1, R2…), colored by **level**: with 3 pools, the first 3 make level 1, the next 3 level 2, and so on. A balanced draw shows one team of each color per pool;
    - each club has its color: its badge stays pale when the club is alone in its pool, and turns solid, with "×2", when two teams of the same club meet there;

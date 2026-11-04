@@ -11,6 +11,7 @@ updated: 2026-11-04
 
 - **New:** at the draw, each club has its color. A club alone in its pool stays pale; two teams of the same club in a pool stand out, with "×2".
 - **New:** one color per ranking level. With 5 pools, the first 5 teams make level 1, the next 5 level 2…: you see at a glance whether each pool has one team of each level.
+- **New:** clubs with an acronym. A club has a name and an optional acronym (Rillieux / AUVR), both recognised when entering players and at import; at the draw they count as one club, older files included. Clubs unknown to the list are offered for adding at import, and a setting shows clubs by name or by acronym.
 - **Improved:** "seeds" become the "ranking": rank a few teams or all of them.
 - **Improved:** a pool stays in ranking order, even when you move a team into it by hand.
 

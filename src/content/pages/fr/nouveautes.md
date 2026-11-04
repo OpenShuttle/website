@@ -11,6 +11,7 @@ updated: 2026-11-04
 
 - **Nouveau :** au tirage, chaque club a sa couleur. Un club seul dans sa poule reste pâle ; deux équipes du même club dans une poule ressortent, avec « ×2 ».
 - **Nouveau :** une couleur par niveau de classement. Avec 5 poules, les 5 premières équipes forment le niveau 1, les 5 suivantes le niveau 2… : vous voyez d’un coup d’œil si chaque poule a bien une équipe de chaque niveau.
+- **Nouveau :** clubs avec acronyme. Un club a un nom et un acronyme facultatif (Rillieux / AUVR), reconnus tous les deux à la saisie et à l’import ; au tirage, ils comptent pour un seul club, y compris dans les anciens fichiers. Les clubs inconnus d’un import sont proposés à l’ajout, et un réglage affiche les clubs par nom ou par acronyme.
 - **Amélioré :** les « têtes de série » deviennent le « classement » : classez quelques équipes ou toutes.
 - **Amélioré :** une poule reste rangée dans l’ordre du classement, même quand vous y déplacez une équipe à la main.
 
