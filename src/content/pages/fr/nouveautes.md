@@ -13,6 +13,7 @@ updated: 2026-11-04
 - **Nouveau :** le format d’une phase suivante se modifie pendant le tournoi, tant qu’aucun de ses matchs n’a commencé. Après des forfaits ou en cas de retard, passez le tableau final en un set, transformez-le en poules, ajoutez ou supprimez une phase.
 - **Nouveau :** une corbeille sur l’accueil. Un tournoi dont vous n’avez plus besoin quitte la liste ; vous le restaurez ou le supprimez plus tard.
 - **Nouveau :** l’aperçu du format se calcule au choix pour les paires complètes, toutes les inscriptions ou les présents.
+- **Amélioré :** la catégorie choisie vous suit d’un écran à l’autre (inscrits, pointage, format, phases, résultats, file de la table de marque).
 - **Amélioré :** au pointage, les équipes déjà pointées passent en bas de la liste ; en haut restent celles qu’on attend.
 - **Amélioré :** chaque fenêtre de choix de fichier (import, export, ouverture, archive) s’ouvre dans le dernier dossier utilisé.
 - **Amélioré :** une équipe qui a déjà des matchs ne peut plus être retirée ou séparée par erreur : l’écran Inscrits indique de déclarer un forfait.

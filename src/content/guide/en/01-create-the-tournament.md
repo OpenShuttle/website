@@ -19,6 +19,8 @@ In **Info**, set:
 - **the number of courts**;
 - **the minimum rest between two matches**, in minutes.
 
+With two categories, the Entrants, Check-in, Format, Stages and Results screens and the control desk queue let you pick a category. OpenShuttle remembers your last choice and keeps it from one screen to the next.
+
 > To discover the app without typing anything, click **Try with a sample tournament** on the home screen: OpenShuttle creates and opens a tournament already under way, with fictional pairs, pools then a bracket, busy courts and a pending score. It is a file like any other, which you can delete afterwards.
 
 At any time, the **?** button in the top bar opens this guide.

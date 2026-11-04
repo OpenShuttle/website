@@ -19,6 +19,8 @@ Dans **Infos**, réglez :
 - **le nombre de terrains** ;
 - **le repos minimum entre deux matchs**, en minutes.
 
+Avec deux catégories, les écrans Inscrits, Pointage, Format, Phases, Résultats et la file de la table de marque proposent un choix de catégorie. OpenShuttle retient le dernier choix et le reprend d'un écran à l'autre.
+
 > Pour découvrir l'application sans rien saisir, cliquez sur **Essayer avec un tournoi d'exemple** sur l'écran d'accueil : OpenShuttle crée et ouvre un tournoi déjà en cours, avec des paires fictives, des poules puis un tableau, des terrains occupés et un score en attente. C'est un fichier comme un autre, que vous pouvez supprimer ensuite.
 
 À tout moment, le bouton **?** de la barre du haut ouvre ce guide.
