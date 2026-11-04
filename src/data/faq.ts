@@ -14,7 +14,7 @@ export const faq: Record<Locale, FaqItem[]> = {
       home: true,
       question: 'Faut-il une connexion internet ?',
       answer:
-        '<p>Non. OpenShuttle fonctionne entièrement hors ligne, sur un seul ordinateur. Internet ne sert qu’à le télécharger.</p>',
+        '<p>Non. OpenShuttle fonctionne entièrement hors ligne, sur un seul ordinateur. Internet ne sert qu’à le télécharger et, si l’ordinateur est connecté, à vérifier au démarrage s’il existe une nouvelle version (une option qui se désactive dans les paramètres).</p>',
     },
     {
       home: true,
@@ -98,7 +98,7 @@ export const faq: Record<Locale, FaqItem[]> = {
       home: true,
       question: 'Do I need an internet connection?',
       answer:
-        '<p>No. OpenShuttle runs fully offline, on a single computer. You only need the internet to download it.</p>',
+        '<p>No. OpenShuttle runs fully offline, on a single computer. The internet is only used to download it and, when the computer is connected, to check at startup whether a new version exists (an option you can turn off in the settings).</p>',
     },
     {
       home: true,

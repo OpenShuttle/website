@@ -31,7 +31,7 @@ Les membres de l’équipe utilisent l’authentification à deux facteurs sur G
 
 ## Confidentialité
 
-Ce programme ne transfère aucune information vers d’autres systèmes en réseau, sauf demande expresse de la personne qui l’installe ou l’utilise. En pratique, OpenShuttle n’établit aucune connexion réseau : vos tournois restent dans des fichiers sur votre ordinateur. Voir la [politique de confidentialité](/confidentialite/).
+Ce programme ne transfère aucune information vers d’autres systèmes en réseau, sauf demande expresse de la personne qui l’installe ou l’utilise. Sa seule connexion réseau est, au démarrage, une requête vers GitHub pour savoir si une nouvelle version est publiée ; elle n’envoie aucune donnée de vos tournois et se désactive dans les paramètres. Vos tournois restent dans des fichiers sur votre ordinateur. Voir la [politique de confidentialité](/confidentialite/).
 
 ## Signaler un problème
 

@@ -31,7 +31,7 @@ Team members use two-factor authentication on GitHub and SignPath.
 
 ## Privacy
 
-This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it. In practice, OpenShuttle makes no network connection at all: your tournaments stay in files on your computer. See the [privacy policy](/en/privacy/).
+This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it. Its only network connection is, at startup, a request to GitHub to learn whether a new version is published; it sends no tournament data and can be turned off in the settings. Your tournaments stay in files on your computer. See the [privacy policy](/en/privacy/).
 
 ## Reporting a problem
 
