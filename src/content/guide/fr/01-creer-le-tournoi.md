@@ -4,14 +4,14 @@ title: Créer le tournoi et ses catégories
 summary: Un fichier par tournoi, une ou deux catégories, le nombre de terrains et le repos minimum.
 images:
   - src: ../../../assets/guide/01-home-fr.png
-    alt: "L’écran d’accueil d’OpenShuttle : la liste des tournois récents avec les boutons Essayer avec un tournoi d’exemple, Ouvrir un fichier et Nouveau tournoi"
+    alt: "L’écran d’accueil d’OpenShuttle : la liste des tournois récents avec, pour chacun, les boutons corbeille, Dupliquer et Ouvrir, et en haut Essayer avec un tournoi d’exemple, Ouvrir un fichier et Nouveau tournoi"
     caption: "L’accueil : tournois récents, tournoi d’exemple et Nouveau tournoi"
   - src: ../../../assets/guide/01-infos-fr.png
     alt: "L’écran Infos du tournoi : le nom, les catégories Double homme et Double dame sélectionnées, 7 terrains et 10 minutes de repos minimum"
     caption: "Infos : catégories, terrains et repos minimum"
 ---
 
-Sur l'écran d'accueil, cliquez sur **Nouveau tournoi** et donnez-lui un nom. OpenShuttle crée un fichier `.openshuttle` sur votre ordinateur : tout le tournoi y est enregistré, action après action. Préparez-le tranquillement chez vous les jours précédents, il pourra encore changer le jour J.
+Sur l'écran d'accueil, cliquez sur **Nouveau tournoi** et donnez-lui un nom. OpenShuttle crée un fichier `.openshuttle` sur votre ordinateur : tout le tournoi y est enregistré, action après action. Préparez-le tranquillement chez vous les jours précédents, il pourra encore changer le jour J. Les fenêtres d’ouverture et d’enregistrement de fichiers s’ouvrent dans le dernier dossier utilisé.
 
 Dans **Infos**, réglez :
 
@@ -24,3 +24,5 @@ Dans **Infos**, réglez :
 À tout moment, le bouton **?** de la barre du haut ouvre ce guide.
 
 > Vous refaites le même tournoi chaque année ? Sur l'écran d'accueil, **Dupliquer** reprend les catégories, le format et les terrains d'un tournoi précédent, sans les inscrits.
+
+> Un tournoi dont vous n'avez plus besoin ? Le bouton corbeille le retire de la liste, sans toucher au fichier. Depuis **Corbeille**, vous le restaurez, ou le supprimez définitivement, avec son fichier si vous le souhaitez.

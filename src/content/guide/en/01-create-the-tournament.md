@@ -4,14 +4,14 @@ title: Create the tournament and its categories
 summary: One file per tournament, one or two categories, the number of courts and the minimum rest.
 images:
   - src: ../../../assets/guide/01-home-en.png
-    alt: "The OpenShuttle home screen: the list of recent tournaments with the Try with a sample tournament, Open a file and New tournament buttons"
+    alt: "The OpenShuttle home screen: the list of recent tournaments each with its trash, Duplicate and Open buttons, and at the top Try with a sample tournament, Open a file and New tournament"
     caption: "Home: recent tournaments, sample tournament and New tournament"
   - src: ../../../assets/guide/01-infos-en.png
     alt: "The Tournament info screen: the name, the Men’s doubles and Women’s doubles categories selected, 7 courts and a 10-minute minimum rest"
     caption: "Info: categories, courts and minimum rest"
 ---
 
-On the home screen, click **New tournament** and give it a name. OpenShuttle creates an `.openshuttle` file on your computer: the whole tournament is saved there, action after action. Prepare it quietly at home in the days before; it can still change on the day.
+On the home screen, click **New tournament** and give it a name. OpenShuttle creates an `.openshuttle` file on your computer: the whole tournament is saved there, action after action. Prepare it quietly at home in the days before; it can still change on the day. File dialogs open in the folder you used last.
 
 In **Info**, set:
 
@@ -24,3 +24,5 @@ In **Info**, set:
 At any time, the **?** button in the top bar opens this guide.
 
 > Running the same tournament every year? On the home screen, **Duplicate** copies the categories, format and courts of a previous tournament, without the entrants.
+
+> A tournament you no longer need? The trash button removes it from the list without touching the file. From **Trash**, restore it, or delete it for good, with its file if you wish.

@@ -4,14 +4,19 @@ title: Add the entrants
 summary: By hand or by importing a CSV file (HelloAsso export, spreadsheet), with each player's club.
 images:
   - src: ../../../assets/guide/02-entrants-en.png
-    alt: "The Entrants screen: the list of pairs with their club and bib number, and the Add a pair form"
+    alt: "The Entrants screen: the list of pairs with their club and bib number, two players registered alone waiting for a partner, and the entry form with the Registered alone, waiting for a partner box"
     caption: "The entrants list and the entry form"
+  - src: ../../../assets/guide/02-partner-en.png
+    alt: "The Find a partner panel of Adrien Marchand: pair him with Bastien Leroy, another player on his own in the category, or add a partner who was not registered"
+    caption: "Pairing two players registered alone"
   - src: ../../../assets/guide/02-import-en.png
     alt: "Importing a HelloAsso export: the first lines of the file, the Tarif column giving the category with the lunch line ignored, the player 1 and player 2 columns, and the preview of the 7 entrants to import"
     caption: "Import: each column of the file in its place"
 ---
 
 In **Entrants**, add the entrants of each category: a player in singles, a pair in doubles. Each player has a name (first and last name) and a club, picked from the club list or added on the way.
+
+In doubles, a player without a partner registers alone: tick **Registered alone, waiting for a partner**. They show as "Waiting for a partner" and stay out of the draw while alone. With **Partner…**, pair them with another player on their own in the category (**Form the pair**) or add a partner who was not registered. The other way round, **Split the pair** puts both players back to waiting for a partner.
 
 Already have the list elsewhere? **Import…** takes any CSV file: an OpenShuttle export, a HelloAsso export or a spreadsheet saved as CSV (semicolon, comma or tab separated, UTF-8 or Excel's Windows encoding).
 
@@ -21,8 +26,10 @@ OpenShuttle guesses what each column holds from the header line, and shows its g
 - **each player**: either one column with the full name, or one column for the first name and one for the last name, and the club column. The partner can take player 1's club;
 - **pairs**: tick **Pairs: a second player on each line** when the file gives both players on the same line.
 
-Below, the preview updates live: the entrants to import, the lines skipped with the reason (already entered, category not played…) and the lines ignored. Nothing is entered until you click **Import N entrants**. A pair registered by each of its two players is entered once. The whole import is cancelled by a single **Undo**.
+Below, the preview updates live: the entrants to import, the lines skipped with the reason (already entered, category not played…) and the lines ignored. Nothing is entered until you click **Import N entrants**. A pair registered by each of its two players is entered once, and a line with a single player enters them alone, waiting for a partner. The whole import is cancelled by a single **Undo**.
 
 **Export** saves the list as CSV: handy to keep it from one year to the next and import it again.
 
 > Two players with the same name? OpenShuttle warns you without blocking: namesakes exist. On the day, the bib number tells them apart.
+
+> Once the draw is confirmed, a team has matches: it can no longer be removed or split, but its names and clubs can still be corrected. If it stops, declare a forfeit (**Stages**, correction mode).

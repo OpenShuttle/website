@@ -55,6 +55,11 @@ export const faq: Record<Locale, FaqItem[]> = {
         '<p>Vous enchaînez librement des phases : poules, tableaux à élimination directe, tableau consolante, avec placement complet pour classer tout le monde place par place. Chaque phase a sa condition de victoire : nombre de sets, points par set, plafond, ou matchs au temps joués par rotations avec point en or (quand une seule catégorie joue).</p><p>Des presets prêts à l’emploi évitent de tout reconstruire d’un tournoi à l’autre.</p>',
     },
     {
+      question: 'Peut-on changer le format pendant le tournoi ?',
+      answer:
+        '<p>Oui, pour les phases qui n’ont pas commencé. Une phase se fige dès son premier match ; les suivantes restent modifiables pendant que les poules se jouent. Après des forfaits ou en cas de retard, vous pouvez par exemple passer le tableau final en un set, le transformer en poules, ou ajouter et supprimer une phase.</p>',
+    },
+    {
       question: 'OpenShuttle gère-t-il les classements des joueurs (P10, NC…) ?',
       answer:
         '<p>Non, il n’y a pas de niveau ni de classement fédéral. Pour équilibrer les poules, vous désignez vos têtes de série et les rangez dans l’ordre au moment du tirage.</p>',
@@ -63,6 +68,11 @@ export const faq: Record<Locale, FaqItem[]> = {
       question: 'Comment importer la liste des inscrits ?',
       answer:
         '<p>Depuis n’importe quel fichier CSV : un export HelloAsso, un tableur ou un export d’OpenShuttle. OpenShuttle devine le rôle de chaque colonne (catégorie, noms, clubs) et vous laisse corriger, avec un aperçu des inscriptions avant d’importer. Les lignes déjà inscrites sont signalées, et l’import s’annule d’un seul clic.</p>',
+    },
+    {
+      question: 'Un joueur s’inscrit sans partenaire, comment faire ?',
+      answer:
+        '<p>En double, inscrivez-le seul : il attend un partenaire et n’entre pas dans le tirage tant qu’il est seul. Le jour J, formez la paire avec un autre joueur seul de la catégorie ou ajoutez un partenaire sur place. Une ligne d’import avec un seul joueur l’inscrit de la même façon.</p>',
     },
     {
       question: 'Où sont enregistrés mes tournois ?',
@@ -129,6 +139,11 @@ export const faq: Record<Locale, FaqItem[]> = {
         '<p>You chain stages freely: pools, single elimination brackets, a consolation bracket, with full placement to rank everyone place by place. Each stage has its own win condition: sets to win, points per set, a point cap, or timed matches played in rounds with a golden point (when a single category plays).</p><p>Ready-made presets save you from rebuilding everything from one tournament to the next.</p>',
     },
     {
+      question: 'Can I change the format during the tournament?',
+      answer:
+        '<p>Yes, for the stages that have not started. A stage is fixed from its first match; the later ones stay open while the pools are played. After forfeits or when running late, you can for example play the final bracket in one set, turn it into pools, or add and remove a stage.</p>',
+    },
+    {
       question: 'Does OpenShuttle handle player rankings or levels?',
       answer:
         '<p>No, there are no levels or federation rankings. To balance the pools, you pick your seeds and put them in order at the draw.</p>',
@@ -137,6 +152,11 @@ export const faq: Record<Locale, FaqItem[]> = {
       question: 'How do I import the list of entrants?',
       answer:
         '<p>From any CSV file: a HelloAsso export, a spreadsheet or an OpenShuttle export. OpenShuttle guesses what each column holds (category, names, clubs) and lets you correct it, with a preview of the entrants before importing. Rows already entered are reported, and the whole import can be undone in one click.</p>',
+    },
+    {
+      question: 'A player registers without a partner. What do I do?',
+      answer:
+        '<p>In doubles, register them alone: they wait for a partner and stay out of the draw while alone. On the day, pair them with another player on their own in the category or add a partner on the spot. An import line with a single player enters them the same way.</p>',
     },
     {
       question: 'Where are my tournaments saved?',
