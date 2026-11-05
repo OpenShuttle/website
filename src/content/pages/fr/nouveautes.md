@@ -4,8 +4,23 @@ title: "Nouveautés d’OpenShuttle : historique des versions"
 description: "Ce qui change à chaque version d’OpenShuttle : nouvelles fonctionnalités et corrections, de la plus récente à la plus ancienne."
 heading: "Nouveautés"
 lead: "Ce qui change à chaque version de l’application, de la plus récente à la plus ancienne. Pour mettre à jour, téléchargez la nouvelle version et installez-la par-dessus : vos tournois sont conservés."
-updated: 2026-11-04
+updated: 2026-11-05
 ---
+
+## Version 1.4.0 · 5 novembre 2026
+
+- **Nouveau :** des règles par terrain. Un terrain peut être *prioritaire* pour une catégorie, une phase, une poule ou un tour de tableau, *uniquement* réservé à ce qui le concerne, ou *jamais* utilisé pour cela. Elles remplacent les terrains réservés et les matchs fantômes de la 1.3.
+- **Nouveau :** la journée et les pauses. Indiquez la date et les heures de début et de fin sur l’écran Infos ; l’échéancier part de l’heure de début, signale une fin trop tardive et prévoit les pauses (déjeuner…) ajoutées sur tous les terrains.
+- **Nouveau :** une pause avant une phase. Une phase qui suit une autre peut attendre un délai (par quarts d’heure) après la fin des matchs qui l’alimentent.
+- **Nouveau :** pools et tableaux ont leur couleur, la même sur l’échéancier et sur la table de marque, avec des tours nommés (« P A · 2/5 », « 1/4 », « Finale »). Sur l’échéancier, un badge par poule ou tableau met ses matchs en valeur.
+- **Nouveau :** ouvrir un tournoi d’un double-clic sur son fichier. Si le tournoi est déjà ouvert dans une autre fenêtre, celle-ci passe au premier plan : un même fichier ne s’ouvre qu’une fois.
+- **Nouveau :** l’accueil signale qu’une version plus récente est disponible (une vérification discrète au démarrage, désactivable dans les réglages ; rien n’est téléchargé tout seul).
+- **Amélioré :** les tableaux sont tirés avec soin : les équipes d’une même poule se retrouvent le plus tard possible, et les exemptions vont à celles qui ont le plus joué.
+- **Amélioré :** dans un tour de tableau, les matchs à faible enjeu (9e place, 7e…) passent d’abord, la finale en dernier.
+- **Amélioré :** le classement se modifie même une fois les poules tirées.
+- **Corrigé :** avec des exemptions (6 équipes dans un tableau de 8), les matchs se jouent et se prévoient dans leur vrai tour.
+
+[Détails techniques de la version 1.4.0 sur GitHub](https://github.com/OpenShuttle/openshuttle-app/releases/tag/desktop-v1.4.0)
 
 ## Version 1.3.0 · 4 novembre 2026
 
