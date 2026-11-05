@@ -4,8 +4,23 @@ title: "OpenShuttle changelog: what is new in each version"
 description: "What changes in each version of OpenShuttle: new features and fixes, from the latest to the oldest."
 heading: "Changelog"
 lead: "What changes in each version of the app, from the latest to the oldest. To update, download the new version and install it over the old one: your tournaments are kept."
-updated: 2026-11-04
+updated: 2026-11-05
 ---
+
+## Version 1.4.0 · November 5, 2026
+
+- **New:** rules per court. A court can be *priority* for a category, a stage, a pool or a bracket round, *only* for what concerns it, or *never* used for it. They replace the reserved courts and ghost matches of 1.3.
+- **New:** the day and the breaks. Set the date and the start and end hours on the Info screen; the schedule starts from the start hour, flags a finish that runs too late and plans the breaks (lunch…) you add on every court.
+- **New:** a pause before a stage. A stage that follows another can wait for a delay (in quarter hours) after the matches feeding it end.
+- **New:** pools and brackets have their color, the same on the schedule and the control desk, with named rounds ("P A · 2/5", "QF", "Final"). On the schedule, one badge per pool or bracket highlights its matches.
+- **New:** open a tournament by double-clicking its file. If it is already open in another window, that window comes to the front: a file opens only once.
+- **New:** the home screen says when a newer version is available (a quiet check at startup, which you can turn off in the settings; nothing is downloaded by itself).
+- **Improved:** brackets are drawn with more care: teams from the same pool meet as late as possible, and byes go to the teams that played the most.
+- **Improved:** in a bracket round, the low-stakes matches (9th place, 7th…) come first, the final last.
+- **Improved:** the ranking can be changed even after the pools are drawn.
+- **Fixed:** with byes (6 teams in a bracket of 8), matches are played and forecast in their real round.
+
+[Technical details of version 1.4.0 on GitHub](https://github.com/OpenShuttle/openshuttle-app/releases/tag/desktop-v1.4.0)
 
 ## Version 1.3.0 · November 4, 2026
 

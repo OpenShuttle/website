@@ -61,7 +61,7 @@ export const home = {
     scheduleChecks: [
       'Heure de fin estimée de la journée',
       'Alerte quand un joueur n’a pas eu son repos',
-      'Terrains partagés ou réservés par catégorie',
+      'Règles par terrain : prioritaire, uniquement, jamais',
     ],
     displayBadge: 'Écran d’appel',
     displayH2: 'Les joueurs savent où aller, sans micro.',
@@ -152,7 +152,7 @@ export const home = {
     scheduleChecks: [
       'Estimated end time of the day',
       'Warning when a player has not had their rest',
-      'Courts shared or reserved per category',
+      'Rules per court: priority, only, never',
     ],
     displayBadge: 'Display screen',
     displayH2: 'Players know where to go, no microphone needed.',

@@ -9,9 +9,18 @@ updated: 2026-10-20
 
 ## L’application OpenShuttle
 
-- **Aucune donnée collectée.** OpenShuttle fonctionne entièrement hors ligne. Il n’établit aucune connexion réseau, n’envoie aucune statistique d’utilisation, aucun rapport de plantage et ne vérifie pas les mises à jour en ligne.
+- **Aucune donnée collectée.** OpenShuttle fonctionne entièrement hors ligne. Il n’envoie aucune statistique d’utilisation ni aucun rapport de plantage, et vos tournois ne quittent jamais votre ordinateur. Sa seule connexion réseau est la recherche de nouvelle version décrite ci-dessous, que vous pouvez désactiver.
 - **Vos données restent chez vous.** Les tournois (inscrits, clubs, scores, historique) sont enregistrés dans des fichiers `.openshuttle` sur votre ordinateur, avec des copies de sauvegarde au même endroit. Les réglages, presets et la liste des clubs sont dans un fichier local de l’application.
 - **Vous en êtes responsable.** En tant qu’organisateur, c’est vous qui traitez les noms des joueurs : gardez les fichiers en lieu sûr et supprimez-les quand vous n’en avez plus besoin. Les exports CSV et les archives sont créés uniquement quand vous le demandez, à l’endroit que vous choisissez.
+
+## Recherche d’une nouvelle version
+
+Au démarrage, OpenShuttle vérifie s’il existe une version plus récente, pour vous le signaler sur l’écran d’accueil avec un lien vers la page [Télécharger](/telecharger/).
+
+- **Ce qui est envoyé.** Une seule requête, en arrière-plan, vers GitHub (`api.github.com`), qui héberge le code et les versions d’OpenShuttle. Elle demande la liste des versions publiées ; OpenShuttle n’en lit que les numéros.
+- **Ce que GitHub reçoit.** Comme pour toute visite d’un site, l’adresse IP de votre ordinateur, l’heure de la requête et l’identifiant du logiciel avec son numéro de version (`OpenShuttle/1.4.0`, par exemple), selon la [déclaration de confidentialité de GitHub](https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement). Aucun cookie, aucun identifiant, aucune donnée de vos tournois.
+- **Ce qu’OpenShuttle en fait.** Rien n’est téléchargé ni installé, et rien n’est conservé : l’application affiche seulement qu’une nouvelle version existe. Sans connexion internet, il ne se passe rien et tout fonctionne comme d’habitude.
+- **Comment la désactiver.** Elle est activée par défaut. Dans **Paramètres → Mises à jour**, réglez **Rechercher une nouvelle version au démarrage** sur **Non**. Le bouton **Vérifier maintenant** lance la vérification à la demande.
 
 ## Le site openshuttle.app
 
