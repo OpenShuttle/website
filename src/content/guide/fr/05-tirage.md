@@ -4,7 +4,7 @@ title: Faire le tirage avec un classement
 summary: Poules tirées parmi les présents, équipes classées en serpentin, niveaux et clubs repérés par couleur.
 images:
   - src: ../../../assets/guide/05-draw-fr.png
-    alt: "L’écran Tirage validé : les poules A, B et C du double homme ; chaque paire porte son dossard, son rang coloré par niveau et le badge de son club, et deux paires du même club ressortent dans la poule A"
+    alt: "L’écran Tirage validé : les poules A, B et C du double homme ; les paires classées portent leur rang coloré par niveau, et chaque paire le badge de son club"
     caption: "Une couleur par niveau de classement, une couleur par club"
 ---
 

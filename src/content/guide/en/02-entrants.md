@@ -4,7 +4,7 @@ title: Add the entrants
 summary: By hand or by importing a CSV file (HelloAsso export, spreadsheet), with each player's club.
 images:
   - src: ../../../assets/guide/02-entrants-en.png
-    alt: "The Entrants screen: the list of pairs with their club and bib number, two players registered alone waiting for a partner, and the entry form with the Registered alone, waiting for a partner box"
+    alt: "The Entrants screen: the list of pairs with their club and check-in, two players registered alone waiting for a partner, and the entry form with the Registered alone, waiting for a partner box"
     caption: "The entrants list and the entry form"
   - src: ../../../assets/guide/02-partner-en.png
     alt: "The Find a partner panel of Adrien Marchand: pair him with Bastien Leroy, another player on his own in the category, or add a partner who was not registered"
@@ -33,6 +33,6 @@ Below, the preview updates live: the entrants to import, the lines skipped with 
 
 **Export** saves the list as CSV: handy to keep it from one year to the next and import it again.
 
-> Two players with the same name? OpenShuttle warns you without blocking: namesakes exist. On the day, the bib number tells them apart.
+> Two players with the same name? OpenShuttle warns you without blocking: namesakes exist. On the day, their club and partner tell them apart.
 
 > Once the draw is confirmed, a team has matches: it can no longer be removed or split, but its names and clubs can still be corrected. If it stops, declare a forfeit (**Stages**, correction mode).

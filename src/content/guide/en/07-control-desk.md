@@ -19,7 +19,7 @@ The **Control desk** is where you will spend most of the day. Each court has its
 
 **Pending scores.** No time to enter a score? Start the next match: the score waits in the **Pending scores** column, with its court and end time, and can be entered later in any order. Players' rest counts from the real end of the match.
 
-**Entering a score.** The panel opens from the court, with as many sets as the win condition needs. Enter saves, Escape closes.
+**Entering a score.** The panel opens from the court, with as many sets as the win condition needs. Tab moves set by set (set 1 of both teams, then set 2…) and skips a third set that is not needed. Enter saves, Escape closes.
 
 **Next matches.** The right column lists the queue, with a category filter, and says why a match is not ready: player resting for X minutes, player on another court. A proposed match with a player who has not had their rest is flagged; you can call it anyway.
 

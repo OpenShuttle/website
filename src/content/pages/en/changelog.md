@@ -7,6 +7,18 @@ lead: "What changes in each version of the app, from the latest to the oldest. T
 updated: 2026-11-05
 ---
 
+## Version 1.5.0 · November 5, 2026
+
+- **New:** brackets are drawn as a tree, one round per column, each part (places 1 to 4, 5 to 8…) in its own titled block. Buttons jump to a round or to a part of the bracket, and the links to the next match show all, only the winners’, only the losers’, or none.
+- **New:** in a bracket, each team shows where it comes from: its pool and rank (A1, B2…), colored by pool.
+- **New:** bib numbers are no longer shown by default and match codes (MD-A3…) are gone from the screens: a match reads as its teams, its category and its round. Bibs are still given at check-in; a setting shows them everywhere.
+- **Improved:** score entry moves set by set with Tab (set 1 of both teams, then set 2…), and a third set that is not needed is not asked for.
+- **Improved:** buttons clearly show which one has the focus when you use the keyboard.
+- **Fixed:** on a finished court, the next proposed match shows at once.
+- **Fixed:** check-in shows names and clubs again when bibs are hidden, and the history only shows bibs when they are shown.
+
+[Technical details of version 1.5.0 on GitHub](https://github.com/OpenShuttle/openshuttle-app/releases/tag/desktop-v1.5.0)
+
 ## Version 1.4.0 · November 5, 2026
 
 - **New:** rules per court. A court can be *priority* for a category, a stage, a pool or a bracket round, *only* for what concerns it, or *never* used for it. They replace the reserved courts and ghost matches of 1.3.

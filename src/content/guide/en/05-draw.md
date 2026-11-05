@@ -4,7 +4,7 @@ title: Run the draw with a ranking
 summary: Pools drawn from present entrants, ranked teams placed in a snake, levels and clubs color-coded.
 images:
   - src: ../../../assets/guide/05-draw-en.png
-    alt: "The confirmed Draw screen: men’s doubles pools A, B and C; each pair shows its bib number, its rank colored by level and its club badge, and two pairs of the same club stand out in pool A"
+    alt: "The confirmed Draw screen: men’s doubles pools A, B and C; the ranked pairs show their rank colored by level, and each pair its club badge"
     caption: "One color per ranking level, one color per club"
 ---
 

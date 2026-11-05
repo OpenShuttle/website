@@ -19,7 +19,7 @@ La **Table de marque** est l'écran où vous passerez l'essentiel de la journée
 
 **Les scores en attente.** Pas le temps de saisir un score ? Lancez le match suivant : le score attend dans la colonne **Scores en attente**, avec son terrain et son heure de fin, et se saisit plus tard dans n'importe quel ordre. Le repos des joueurs compte depuis la vraie fin du match.
 
-**Saisir un score.** Le panneau s'ouvre depuis le terrain, avec autant de sets que la condition de victoire en demande. Entrée valide, Échap ferme.
+**Saisir un score.** Le panneau s'ouvre depuis le terrain, avec autant de sets que la condition de victoire en demande. Tab avance set par set (set 1 des deux équipes, puis set 2…) et passe un troisième set inutile. Entrée valide, Échap ferme.
 
 **Les prochains matchs.** La colonne de droite liste la file d'attente, filtrable par catégorie, et dit pourquoi un match n'est pas prêt : joueur en repos depuis X minutes, joueur sur un autre terrain. Un match proposé dont un joueur n'a pas eu son repos est signalé ; vous pouvez l'appeler quand même.
 
