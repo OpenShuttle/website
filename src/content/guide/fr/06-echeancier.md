@@ -4,8 +4,11 @@ title: Organiser l'échéancier
 summary: Ordonner les tours dans une liste, valider, puis déplacer des matchs isolés.
 images:
   - src: ../../../assets/guide/06-schedule-fr.png
-    alt: "L’écran Échéancier : le partage des deux catégories, l’ordre des tours à gauche, la frise par terrain au milieu et les matchs restants par équipe à droite"
+    alt: "L’écran Échéancier : l’ordre des tours à gauche, la frise par terrain au milieu, avec la pause de 15 h à 16 h, et les matchs restants par équipe à droite"
     caption: "L’ordre des tours, la frise par terrain et les équipes"
+  - src: ../../../assets/guide/06-court-rules-fr.png
+    alt: "L’écran Échéancier en haut de page : la catégorie qui ouvre chaque tour, les règles de terrain (priorité aux hommes sur les terrains 1 à 3, aux dames sur les 6 et 7), les pauses et les badges de mise en évidence"
+    caption: "Les règles de terrain, les pauses et la mise en évidence"
 ---
 
 L'**Échéancier** prévoit chaque match restant, terrain par terrain, avec son heure estimée, à partir de la durée sur le terrain de chaque condition de victoire. Il fixe aussi l'ordre des appels.

@@ -4,8 +4,11 @@ title: Set up the schedule
 summary: Order the rounds in a list, validate, then move single matches.
 images:
   - src: ../../../assets/guide/06-schedule-en.png
-    alt: "The Schedule screen: how the two categories share the courts, the order of rounds on the left, the timeline per court in the middle and the matches left per team on the right"
+    alt: "The Schedule screen: the order of rounds on the left, the timeline per court in the middle, with the 3 pm to 4 pm break, and the matches left per team on the right"
     caption: "The round order, the court timeline and the teams"
+  - src: ../../../assets/guide/06-court-rules-en.png
+    alt: "The top of the Schedule screen: which category opens each round, the court rules (priority to men's doubles on courts 1 to 3, to women's doubles on 6 and 7), the breaks and the highlight badges"
+    caption: "The court rules, the breaks and the highlight"
 ---
 
 The **Schedule** forecasts every match left, court by court, with its estimated time, from the time on court of each win condition. It also sets the order of the calls.
