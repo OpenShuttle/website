@@ -12,7 +12,7 @@ Branchez un vidéoprojecteur ou une télé en HDMI sur l'ordinateur de la table 
 
 L'écran d'appel montre, en très grand :
 
-- **le match appelé**, avec son terrain et les dossards des joueurs ;
+- **le match appelé**, avec son terrain et les noms des joueurs ;
 - **les appels précédents** et la grille des terrains en cours, libres ou terminés ;
 - **les classements des poules et les tableaux**, qui défilent automatiquement.
 

@@ -4,7 +4,7 @@ title: Inscrire les participants
 summary: À la main ou par import d'un fichier CSV (export HelloAsso, tableur), avec le club de chaque joueur.
 images:
   - src: ../../../assets/guide/02-entrants-fr.png
-    alt: "L’écran Inscrits : la liste des paires avec leur club et leur dossard, deux joueurs inscrits seuls qui attendent un partenaire, et le formulaire d’inscription avec la case Inscrit seul, attend un partenaire"
+    alt: "L’écran Inscrits : la liste des paires avec leur club et leur pointage, deux joueurs inscrits seuls qui attendent un partenaire, et le formulaire d’inscription avec la case Inscrit seul, attend un partenaire"
     caption: "La liste des inscrits et le formulaire d’inscription"
   - src: ../../../assets/guide/02-partner-fr.png
     alt: "Le panneau Trouver un partenaire d’Adrien Marchand : former la paire avec Bastien Leroy, un autre joueur seul de la catégorie, ou ajouter un partenaire qui n’était pas inscrit"
@@ -33,6 +33,6 @@ En dessous, l'aperçu se met à jour en direct : les inscriptions à importer, l
 
 **Exporter** enregistre la liste en CSV : pratique pour la garder d'une année sur l'autre et la réimporter.
 
-> Deux joueurs portent le même nom ? OpenShuttle vous prévient, sans bloquer : les homonymes existent. Le jour J, le dossard les distinguera.
+> Deux joueurs portent le même nom ? OpenShuttle vous prévient, sans bloquer : les homonymes existent. Le jour J, leur club et leur partenaire les distinguent.
 
 > Une fois le tirage validé, une équipe a des matchs : elle ne peut plus être retirée ni séparée, mais son nom et son club se corrigent toujours. Si elle abandonne, déclarez un forfait (**Phases**, mode correction).

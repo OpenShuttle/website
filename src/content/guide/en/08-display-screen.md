@@ -12,7 +12,7 @@ Plug a projector or a TV into the control desk computer over HDMI. In the top ba
 
 The display screen shows, in very large type:
 
-- **the called match**, with its court and the players' bib numbers;
+- **the called match**, with its court and the players' names;
 - **the previous calls** and the grid of courts playing, free or finished;
 - **pool standings and brackets**, rotating automatically.
 

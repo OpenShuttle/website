@@ -7,6 +7,18 @@ lead: "Ce qui change à chaque version de l’application, de la plus récente �
 updated: 2026-11-05
 ---
 
+## Version 1.5.0 · 5 novembre 2026
+
+- **Nouveau :** les tableaux se dessinent en arbre, un tour par colonne, chaque partie (places 1 à 4, 5 à 8…) dans son bloc titré. Des boutons sautent à un tour ou à une partie du tableau, et les liens vers le match suivant s’affichent tous, seulement ceux des vainqueurs, des perdants, ou aucun.
+- **Nouveau :** dans un tableau, chaque équipe montre d’où elle vient : sa poule et son rang (A1, B2…), coloré par poule.
+- **Nouveau :** les dossards ne s’affichent plus par défaut et les codes de match (MD-A3…) ont disparu de l’écran : un match se lit par ses équipes, sa catégorie et son tour. Les dossards restent attribués au pointage ; un réglage les affiche partout.
+- **Amélioré :** la saisie du score avance set par set avec Tab (set 1 des deux équipes, puis set 2…), et un troisième set inutile n’est pas demandé.
+- **Amélioré :** les boutons montrent clairement lequel a le focus quand on navigue au clavier.
+- **Corrigé :** sur un terrain terminé, le match suivant proposé s’affiche aussitôt.
+- **Corrigé :** le pointage affiche à nouveau les noms et les clubs quand les dossards sont masqués, et l’historique ne montre les dossards que s’ils sont affichés.
+
+[Détails techniques de la version 1.5.0 sur GitHub](https://github.com/OpenShuttle/openshuttle-app/releases/tag/desktop-v1.5.0)
+
 ## Version 1.4.0 · 5 novembre 2026
 
 - **Nouveau :** des règles par terrain. Un terrain peut être *prioritaire* pour une catégorie, une phase, une poule ou un tour de tableau, *uniquement* réservé à ce qui le concerne, ou *jamais* utilisé pour cela. Elles remplacent les terrains réservés et les matchs fantômes de la 1.3.
