@@ -21,7 +21,7 @@ The **Control desk** is where you will spend most of the day. Each court has its
 
 **Entering a score.** The panel opens from the court, with as many sets as the win condition needs. Tab moves set by set (set 1 of both teams, then set 2…) and skips a third set that is not needed. Enter saves, Escape closes.
 
-**Next matches.** The right column lists the queue, with a category filter, and says why a match is not ready: player resting for X minutes, player on another court. A proposed match with a player who has not had their rest is flagged; you can call it anyway.
+**Next matches.** The right column lists the queue, with a category filter and a search by player or club, and says why a match is not ready: player resting for X minutes, player on another court. A proposed match with a player who has not had their rest is flagged; you can call it anyway.
 
 **A forfeit.** In the score panel, **Forfeit** asks for confirmation. In a pool, every match of the entrant becomes a walkover: the win counts for the opponent, left out of sets and points, and the entrant ranks last in the pool. In a bracket, a forfeit counts as a loss.
 

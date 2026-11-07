@@ -16,7 +16,9 @@ images:
 
 The **Stages** screen shows, category by category, the standings of each pool and the tree of each bracket.
 
-**A bracket** reads from left to right, one round per column; with full placement, each part (places 1 to 4, 5 to 8…) has its own block. Each team shows its pool and rank of origin (A1, B2…). The buttons at the top jump to a round or a part, and the links to the next match show all, the winners', the losers' or none.
+**A bracket** is folded in two around the final: the top half of the first round on the left, the bottom half on the right, the final and the 3rd place in the middle. With full placement, the lower places are packed below (5 to 8 under the semi-finals, 9 to 16 under the quarter-finals). Each match has a name ("QF A", "SF B"), a team not known yet reads "Winner QF A" or "Loser SF B", and in the first round each team shows its pool and rank of origin (A1, B2…). Links go from the winner (solid) or the loser (dashed) to the match they play next. The buttons at the top jump to a part of the bracket.
+
+Each stage's **Display screen** box chooses what the hall's screen shows (see the previous step).
 
 **Pool tiebreaks** follow the order chosen in the format: wins, head-to-head (between exactly two entrants), set difference, point difference, then a random draw. Always differences, never ratios: walkovers stay neutral. If two entrants are still tied in a finished pool, **Draw lots** settles it.
 

@@ -4,8 +4,21 @@ title: "OpenShuttle changelog: what is new in each version"
 description: "What changes in each version of OpenShuttle: new features and fixes, from the latest to the oldest."
 heading: "Changelog"
 lead: "What changes in each version of the app, from the latest to the oldest. To update, download the new version and install it over the old one: your tournaments are kept."
-updated: 2026-11-05
+updated: 2026-11-07
 ---
+
+## Version 1.6.0 · November 7, 2026
+
+- **New:** the display screen is redesigned to follow the stages. The stages you choose take turns full screen: every pool with its standings (played, wins, set and point differences) and the matches on court, or the whole bracket. A stage taller than the screen goes page by page. The time per stage is set in the settings.
+- **New:** on the Stages screen, a "Display screen" box per stage. It ticks itself at the stage's first match, and you tick or untick it whenever you want.
+- **New:** brackets are folded in two around the final and packed as tight as possible: the 3rd place under the final, places 5 to 8 under the semi-finals, 9 to 16 under the quarter-finals. On the Stages screen as on the display screen.
+- **New:** bracket matches have a name ("QF A", "SF B", "5th–8th A"), and a team not known yet reads "Winner QF A" or "Loser SF B". A trophy marks the winner, a cross the loser; on the display screen, the winner goes on top and the matches for a place show the place won ("1st", "3rd"…).
+- **New:** the computer no longer goes to sleep and its screen no longer turns off while the app is open (you can turn this off in the settings).
+- **New:** after each action, a readable page of the tournament (courts, pending scores, pools, brackets, matches left) is saved beside its file as HTML: if the computer fails, you can go on by hand from another device.
+- **New:** a search field in the control desk's next matches, by player or club. Clubs show wherever teams appear.
+- **Improved:** a bracket's links leave from the winner's or the loser's name once the match is played, enter at the team they feed and no longer overlap. Cards are as wide as their longest name, and the pool of origin (A1, B2…) shows in the first round only.
+
+[Technical details of version 1.6.0 on GitHub](https://github.com/OpenShuttle/openshuttle-app/releases/tag/desktop-v1.6.0)
 
 ## Version 1.5.0 · November 5, 2026
 

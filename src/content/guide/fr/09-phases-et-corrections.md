@@ -16,7 +16,9 @@ images:
 
 L'écran **Phases** montre, catégorie par catégorie, le classement de chaque poule et l'arbre de chaque tableau.
 
-**Un tableau** se lit de gauche à droite, un tour par colonne ; avec le placement complet, chaque partie (places 1 à 4, 5 à 8…) a son bloc. Chaque équipe porte sa poule et son rang d'origine (A1, B2…). Les boutons du haut sautent à un tour ou à une partie, et les liens vers le match suivant s'affichent tous, ceux des vainqueurs, ceux des perdants ou aucun.
+**Un tableau** est plié en deux autour de la finale : la moitié haute du premier tour à gauche, la moitié basse à droite, la finale et la 3e place au centre. Avec le placement complet, les places suivantes se rangent dessous (5 à 8 sous les demi-finales, 9 à 16 sous les quarts). Chaque match a un nom (« 1/4 A », « 1/2 B »), une équipe pas encore connue se lit « Vainqueur 1/4 A » ou « Perdant 1/2 B », et au premier tour chaque équipe porte sa poule et son rang d'origine (A1, B2…). Les liens partent du vainqueur (trait plein) ou du perdant (pointillés) vers le match qu'il joue ensuite. Les boutons du haut sautent à une partie du tableau.
+
+La case **Écran d'appel** de chaque phase choisit ce que montre l'écran de la salle (voir l'étape précédente).
 
 **Le départage des poules** suit l'ordre choisi dans le format : victoires, confrontation directe (entre deux participants exactement), différence de sets, différence de points, puis tirage au sort. Toujours des différences, jamais de ratios : les WO restent neutres. Si deux participants restent à égalité dans une poule terminée, **Tirer au sort** les départage.
 

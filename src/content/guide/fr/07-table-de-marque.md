@@ -21,7 +21,7 @@ La **Table de marque** est l'écran où vous passerez l'essentiel de la journée
 
 **Saisir un score.** Le panneau s'ouvre depuis le terrain, avec autant de sets que la condition de victoire en demande. Tab avance set par set (set 1 des deux équipes, puis set 2…) et passe un troisième set inutile. Entrée valide, Échap ferme.
 
-**Les prochains matchs.** La colonne de droite liste la file d'attente, filtrable par catégorie, et dit pourquoi un match n'est pas prêt : joueur en repos depuis X minutes, joueur sur un autre terrain. Un match proposé dont un joueur n'a pas eu son repos est signalé ; vous pouvez l'appeler quand même.
+**Les prochains matchs.** La colonne de droite liste la file d'attente, filtrable par catégorie, avec une recherche par joueur ou par club, et dit pourquoi un match n'est pas prêt : joueur en repos depuis X minutes, joueur sur un autre terrain. Un match proposé dont un joueur n'a pas eu son repos est signalé ; vous pouvez l'appeler quand même.
 
 **Un forfait.** Dans le panneau de score, **Forfait** demande une confirmation. En poule, tous les matchs du participant passent en WO : la victoire compte pour l'adversaire, sans entrer dans les sets ni les points, et le forfait se classe dernier de sa poule. En tableau, le forfait compte comme une défaite.
 

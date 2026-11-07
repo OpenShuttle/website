@@ -10,12 +10,13 @@ images:
 
 Branchez un vidéoprojecteur ou une télé en HDMI sur l'ordinateur de la table de marque. Dans la barre du haut, le bouton de l'écran d'appel ouvre une deuxième fenêtre et permet de choisir le moniteur ; passez-la en plein écran depuis son propre bouton ou d'un double-clic.
 
-L'écran d'appel montre, en très grand :
+L'écran d'appel montre, tour à tour, **les phases que vous avez choisies** :
 
-- **le match appelé**, avec son terrain et les noms des joueurs ;
-- **les appels précédents** et la grille des terrains en cours, libres ou terminés ;
-- **les classements des poules et les tableaux**, qui défilent automatiquement.
+- **une phase de poules** : toutes les poules, avec leur classement (matchs joués, victoires, différences de sets et de points), les clubs et les matchs en cours sur les terrains ;
+- **un tableau** : l'arbre entier, plié en deux autour de la finale, le vainqueur de chaque match en haut avec un trophée et, sur les matchs de classement, la place gagnée (« 1er », « 3e »…).
 
-Avec deux catégories, les matchs sont mélangés et chaque match porte son code de catégorie bien visible. Pendant une rotation au temps, l'écran affiche les terrains de la rotation et un grand compte à rebours commun.
+Une phase reste affichée le temps réglé dans les paramètres (30 secondes par défaut) ; plus haute que l'écran, elle passe page par page. L'heure s'affiche dans un coin, et pendant une rotation au temps, le compte à rebours commun.
+
+**Choisir les phases affichées.** Sur l'écran **Phases**, chaque phase a une case **Écran d'appel**. Elle se coche toute seule au premier match de la phase ; cochez-la à l'avance ou décochez-la quand vous voulez (par exemple les poules terminées, pour ne garder que le tableau).
 
 Personne n'y touche : il se met à jour tout seul à chaque action de la table de marque.
