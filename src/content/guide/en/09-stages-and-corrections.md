@@ -8,7 +8,7 @@ images:
     caption: "A pool’s standings and the history"
   - src: ../../../assets/guide/09-bracket-en.png
     alt: "The Stages screen on the main draw folded in two: quarter-finals left and right, the final and the 3rd place in the middle, places 5 to 8 below, where each team comes from in the first round (C1, B2…)"
-    caption: "The main bracket and its places"
+    caption: "The main draw, folded in two"
   - src: ../../../assets/guide/09-correction-en.png
     alt: "Correction mode on the main draw: Edit and Clear buttons on each match played"
     caption: "Correction mode"

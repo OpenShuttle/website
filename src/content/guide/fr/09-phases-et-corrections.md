@@ -8,7 +8,7 @@ images:
     caption: "Le classement d’une poule et l’historique"
   - src: ../../../assets/guide/09-bracket-fr.png
     alt: "L’écran Phases sur le tableau principal plié en deux : les quarts à gauche et à droite, la finale et la 3e place au centre, les 5e–8e dessous, l’origine des équipes au premier tour (C1, B2…)"
-    caption: "Le tableau principal et ses places"
+    caption: "Le tableau principal, plié en deux"
   - src: ../../../assets/guide/09-correction-fr.png
     alt: "Le mode correction sur le tableau principal : les boutons Modifier et Effacer sur chaque match joué"
     caption: "Le mode correction"
