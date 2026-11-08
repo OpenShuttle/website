@@ -4,8 +4,11 @@ title: Afficher l'écran d'appel sur un deuxième écran
 summary: Un vidéoprojecteur ou une télé, lisible à dix mètres, sans rien toucher.
 images:
   - src: ../../../assets/guide/08-display-fr.png
-    alt: "L’écran d’appel : le match appelé en très grand sur le terrain 7, la grille des terrains, les appels précédents et le classement d’une poule"
-    caption: "L’écran d’appel, tel que la salle le voit"
+    alt: "L’écran d’appel sur une phase de poules : les trois poules du double hommes avec leur classement (matchs joués, victoires, différences de sets et de points), les clubs et les matchs en cours"
+    caption: "Une phase de poules sur l’écran d’appel"
+  - src: ../../../assets/guide/08-display-bracket-fr.png
+    alt: "L’écran d’appel sur le tableau principal plié en deux autour de la finale : le vainqueur en haut de chaque match avec un trophée, les places gagnées (1er, 2e, 3e…) et les 5e–8e sous les demi-finales"
+    caption: "Le tableau principal sur l’écran d’appel"
 ---
 
 Branchez un vidéoprojecteur ou une télé en HDMI sur l'ordinateur de la table de marque. Dans la barre du haut, le bouton de l'écran d'appel ouvre une deuxième fenêtre et permet de choisir le moniteur ; passez-la en plein écran depuis son propre bouton ou d'un double-clic.

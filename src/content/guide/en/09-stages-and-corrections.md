@@ -4,14 +4,14 @@ title: Follow the stages and make corrections
 summary: Pool standings, brackets, later stages and correction mode with history.
 images:
   - src: ../../../assets/guide/09-stages-en.png
-    alt: "The Stages screen: pool A standings with its matches, and the history of actions on the right"
+    alt: "The Stages screen: the men’s doubles pools with their standings, clubs and matches, the Display screen box and the history of actions on the right"
     caption: "A pool’s standings and the history"
   - src: ../../../assets/guide/09-bracket-en.png
-    alt: "The Stages screen on the main bracket: the tree by rounds with its blocks (places 1 to 2, 3 to 4, 5 to 8…), where each team comes from (C1, B2…), the navigation buttons and the places"
+    alt: "The Stages screen on the main draw folded in two: quarter-finals left and right, the final and the 3rd place in the middle, places 5 to 8 below, where each team comes from in the first round (C1, B2…)"
     caption: "The main bracket and its places"
   - src: ../../../assets/guide/09-correction-en.png
-    alt: "Correction mode on the main bracket: Edit and Clear buttons on a match, with the history"
-    caption: "Correction mode and the history"
+    alt: "Correction mode on the main draw: Edit and Clear buttons on each match played"
+    caption: "Correction mode"
 ---
 
 The **Stages** screen shows, category by category, the standings of each pool and the tree of each bracket.
