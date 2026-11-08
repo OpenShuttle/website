@@ -4,8 +4,21 @@ title: "Nouveautés d’OpenShuttle : historique des versions"
 description: "Ce qui change à chaque version d’OpenShuttle : nouvelles fonctionnalités et corrections, de la plus récente à la plus ancienne."
 heading: "Nouveautés"
 lead: "Ce qui change à chaque version de l’application, de la plus récente à la plus ancienne. Pour mettre à jour, téléchargez la nouvelle version et installez-la par-dessus : vos tournois sont conservés."
-updated: 2026-11-05
+updated: 2026-11-07
 ---
+
+## Version 1.6.0 · 7 novembre 2026
+
+- **Nouveau :** l’écran d’appel est repensé pour suivre les phases. Les phases que vous choisissez s’affichent tour à tour en plein écran : toutes les poules avec leur classement (matchs joués, victoires, différences de sets et de points) et les matchs en cours, ou le tableau entier. Une phase plus haute que l’écran passe page par page. Le temps par phase se règle dans les paramètres.
+- **Nouveau :** sur l’écran Phases, une case « Écran d’appel » par phase. Elle se coche toute seule au premier match de la phase, et vous la cochez ou décochez quand vous voulez.
+- **Nouveau :** les tableaux sont pliés en deux autour de la finale et rangés au plus serré : la 3e place sous la finale, les places 5 à 8 sous les demi-finales, 9 à 16 sous les quarts. Sur l’écran Phases comme sur l’écran d’appel.
+- **Nouveau :** les matchs de tableau ont un nom (« 1/4 A », « 1/2 B », « 5e–8e A »), et une équipe pas encore connue se lit « Vainqueur 1/4 A » ou « Perdant 1/2 B ». Un trophée marque le vainqueur, une croix le perdant ; sur l’écran d’appel, le vainqueur passe en haut et les matchs de classement affichent la place gagnée (« 1er », « 3e »…).
+- **Nouveau :** l’ordinateur ne se met plus en veille et l’écran ne s’éteint plus tant que l’application est ouverte (désactivable dans les paramètres).
+- **Nouveau :** après chaque action, une page lisible du tournoi (terrains, scores en attente, poules, tableaux, matchs restants) est enregistrée à côté du fichier, au format HTML : si l’ordinateur tombe en panne, vous pouvez continuer à la main depuis un autre appareil.
+- **Nouveau :** un champ de recherche dans les prochains matchs de la table de marque, par joueur ou par club. Les clubs s’affichent partout où les équipes apparaissent.
+- **Amélioré :** les liens d’un tableau partent du nom du vainqueur ou du perdant une fois le match joué, arrivent sur l’équipe qu’ils alimentent et ne se superposent plus. Les cartes prennent la largeur de leur plus long nom, et la poule d’origine (A1, B2…) ne s’affiche qu’au premier tour.
+
+[Détails techniques de la version 1.6.0 sur GitHub](https://github.com/OpenShuttle/openshuttle-app/releases/tag/desktop-v1.6.0)
 
 ## Version 1.5.0 · 5 novembre 2026
 
